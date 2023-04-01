@@ -2,16 +2,20 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.header{
-    width: 1517;
-    height: 117.92;
-    color: #373867;
+header{
+    position: fixed;
+    width: 1517px;
+    height: 117.92px;
+    background-color: #373867;
 }
+
 .mega{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
     font-weight: 298px;
     font-size: 47px;
     left: 602px;
     top: 57px;
+    color: #FFFFFF;
 }
 
