@@ -2,8 +2,13 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+main{
+    margin-top: 117.92px;
+    margin-left: 335px;
+}
+
 header{
-    position: fixed;
+    position: sticky;
     width: 1517px;
     height: 117.92px;
     background-color: #373867;
@@ -19,3 +24,106 @@ header{
     color: #FFFFFF;
 }
 
+.conteiner-aside{
+    position: fixed;
+    background-color: #F6F6F6;
+    width: 335px;
+    height: 100%;
+    }
+
+    .list-aside{
+        list-style: none;
+    }
+
+#search{
+    text-align: left;
+    position: relative;
+    border: none;
+    background-color: #FFFFFF;
+    color: #ABA9A9;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    border-radius: 4px; 
+    width: 255px;
+    height: 36px;
+    left: 20px;
+    top: 5px;
+}
+
+.icon{
+    margin-bottom: 25px;
+    margin-top: 20px;  
+    margin-right: 20px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.button-side{
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 10px;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    width: 200px;
+    height: 45px;
+    left: 66px;
+    top: 0px;
+}
+
+
+#info{
+    color: black;
+    width: 200px;
+    height: 24px;
+    left: 50px;
+    top: 512px;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 23px;
+    font-weight: 700;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.information{
+    color: black;
+    width: 240px;
+    height: 27px;
+    left: 71px;
+    top: 581px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon1{
+    width: 30px;
+    height: 30px;
+    top: 6px;
+    left: 9px;
+    padding: 6px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1{
+    text-align: center;
+    color: #373867;
+    display: block;
+    margin-inline-start: 150px;
+    margin-inline-end: 150px;
+    font-weight: 900;
+    width: 687px;
+    height: 245px;
+    font-style: normal;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
