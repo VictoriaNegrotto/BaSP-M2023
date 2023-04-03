@@ -50,50 +50,65 @@
             </div>
         </aside>
         <main>
-            <h1 class="tittle">Hi, and welcome to Mega Rocket SA Gym</h1>
+            <h1>Hi, and welcome to Mega Rocket SA Gym</h1>
             <article>
-            <img src="../assets/img/img1.png" alt="gym">
-            <h2>A free a fully responsive site template</h2>
-            <h3>Aenean ornare velit lacus, ac varius enim ullamcorper eu.
+            <img src="../assets/img/img1.png" alt="gym" id="img">
+            <h2 class="text-line1">A free a fully responsive site template</h2>
+            <h3 class="text-line2">Aenean ornare velit lacus, ac varius enim ullamcorper eu.
                 Proin aliquam facilisis ante interdum congue.
                 Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris.
                 Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas.
                 Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</h3>
         </article>
     <!--Options-->
-    <p>Appointment Booking</p>
-    <img src="../assets/img/image 1.png" alt="sub">
-    <p>Calendar and Openning Hours</p>
-    <img src="../assets/img/image 11.png" alt="calendar">
-    <p>Management and Membership</p>
-    <img src="../assets/img/image 3.png" alt="tarjet">
-    <p>Contact Forms and Suggestions</p>
-    <img src="../assets/img/image 4.png" alt="form">
+    <article class="art-op">
+    <img src="../assets/img/image 1.png" alt="sub" class="img1">
+    <p class="tittle-op">Appointment Booking</p>
+    <p class="info-op">Aenean ornare velit lacus, ac varius enim ullamcorper eu.
+     Proin aliquam facilisis ante interdum congue.</p>
+    </article>
+    <article class="art-op">
+    <img src="../assets/img/image 11.png" alt="calendar" class="img1">
+    <p class="tittle-op">Calendar and Openning Hours</p>
+    <p class="info-op">Aenean ornare velit lacus, ac varius enim ullamcorper eu. 
+    Proin aliquam facilisis ante interdum congue.</p>
+    </article>
+    <article class="art-op">
+    <img src="../assets/img/image 3.png" alt="tarjet" class="img1">
+    <p class="tittle-op">Management and Membership</p>
+    <p class="info-op">Aenean ornare velit lacus, ac varius enim ullamcorper eu. 
+    Proin aliquam facilisis ante interdum congue.</p>
+    </article>
+    <article class="art-op">
+    <img src="../assets/img/image 4.png" alt="form" class="img1">
+    <p class="tittle-op">Contact Forms and Suggestions</p>
+    <p class="info-op">Aenean ornare velit lacus, ac varius enim ullamcorper eu. 
+    Proin aliquam facilisis ante interdum congue.</p>
+    </article>
     <!--Form-->
-    <p>Registration and/or claim</p>
+    <p id="regis">Registration and/or claim</p>
     <form action="process.php" method="post">
-        <h3>Name</h3>
-        <input type="text" name="name">
-        <h3>Lastname</h3>
-        <input type="text" name="lastname">
-        <h3>Email</h3>
-        <input type="text" name="email">
+        <h3 class="form">Name</h3>
+        <input type="text" name="name" class="box">
+        <h3 class="form">Lastname</h3>
+        <input type="text" name="lastname" class="box">
+        <h3 class="form">Email</h3>
+        <input type="text" name="email" class="box">
         <div>
-            <input type="radio" id="mbsandcst">
-            <label for="mbsandcst">I want to know memberships and costs</label>
+            <input type="radio" id="mbsandcst" class="circle">
+            <label for="mbsandcst" class="want">I want to know memberships and costs</label>
         </div>
-        <input type="radio" id="qtorsg">
-        <label for="qtorsg">I want make a question or suggestion</label>
+        <input type="radio" id="qtorsg" class="circle">
+        <label for="qtorsg" class="want">I want make a question or suggestion</label>
         <div>
-            <input type="radio" id="claim">
-            <label for="claim">I want to make a claim</label>
+            <input type="radio" id="claim" class="circle">
+            <label for="claim" class="want">I want to make a claim</label>
         </div>
         <h3>Comments</h3>
-        <textarea name="message"></textarea>
+        <textarea name="message" id="comment"></textarea>
         <div>
-            <input type="submit" name="submit" value="submit">
+            <input type="submit" name="submit" value="submit" id="send">
         </div>
-        <input type="reset" name="cancel" value="cancel">
     </form>
     <!--History-->
     <section>
