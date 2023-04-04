@@ -14,8 +14,9 @@ main{
 }
 
 header{
-    position: relative;
-    top: 
+    position: fixed;
+    top: 0%;
+    left:0%;
     width: 1700px;
     height: 117.92px;
     background-color: #373867;
@@ -23,10 +24,10 @@ header{
 
 .mega{
     text-align: center;
-    font-weight: 900px;
+    font-weight: 700px;
     font-size: 47px;
     left: 602px;
-    top: 57px;
+    margin-top: 50px;
     color: #FFFFFF;
 }
 
@@ -35,6 +36,7 @@ header{
     background-color: #F6F6F6;
     width: 335px;
     height: 100%;
+
     }
 
     .list-aside{
@@ -300,3 +302,76 @@ h3{
 
 }
 
+.separation{
+    width: 300px;
+    height: 5px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    background-color: #BEBEBE;
+    margin-left: 500px;
+}
+
+#tittle-hist{
+    width: 178px;
+    height: 47px;
+    left: 800px;
+    top: 2962px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    font-family: roboto;
+    color: #373867;
+    margin-left: 560px;
+
+}
+
+#history{
+    width: 720px;
+    height: 310px;
+    left: 580px;
+    top: 3246px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 40px;
+    font-family: roboto;
+    color: #2A2A32;
+    background-color:#AACE9B;
+    margin-left: 335px;
+}
+
+.separation{
+    width: 300px;
+    height: 5px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    background-color: #BEBEBE;
+    margin-left: 500px;
+}
+
+#activities{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    width: 178px;
+    height: 70px;
+    left: 823px;
+    top: 3780px;
+    color:#373867;
+    margin-left: 565px;
+}
+
+.activitie-option{
+    display: inline-block;
+    width: 30%;
+    height: 270px;
+    left: 406px;
+    top: 3923px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: roboto;
+}
