@@ -58,6 +58,12 @@ header{
     top: 16px;
 }
 
+.lupa{
+    position: absolute;
+    right: 40px;
+    top: 20px;
+}
+
 .icon{
     display: inline-block;
     margin-bottom: 25px;
