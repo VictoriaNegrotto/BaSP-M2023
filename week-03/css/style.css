@@ -19,6 +19,7 @@ main{
     right: 30px;
     bottom: 30px;
 }
+
 header{
     position: fixed;
     top: 0%;
@@ -43,11 +44,11 @@ header{
     width: 335px;
     height: 100%;
 
-    }
+}
 
-    .list-aside{
+.list-aside{
         list-style: none;
-    }
+}
 
 #search{
     text-align: left;
@@ -305,7 +306,6 @@ h3{
     height: 33px;
     top: 15px;
     margin-left: 610px;
-
 }
 
 .separation{
@@ -343,7 +343,7 @@ h3{
     line-height: 40px;
     font-family: roboto;
     color: #2A2A32;
-    background-color:#AACE9B;
+    background-color: rgba(170, 206, 155, 0.25);
     margin-left: 335px;
 }
 
@@ -380,6 +380,7 @@ h3{
     font-size: 16px;
     line-height: 19px;
     font-family: roboto;
+    margin-left: 40px;
 }
 
 .member{
