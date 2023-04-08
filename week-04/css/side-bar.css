@@ -4,3 +4,32 @@
     width: 335px;
     height: 100%;
 }
+
+#search{
+width: 200px;
+height: 30px;
+background-color: #ffffff;
+justify-content: left;
+}
+
+.list-aside{
+    flex-direction: column;
+    list-style: none;
+}
+
+.aside-button{
+    flex-direction: column-reverse;
+    width: 100px;
+    height: 30px;
+    background-color: #AACE9B;
+    color: black;
+    text-align: center;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.aside-item{
+    float: left;
+    width: 25px;
+    height: 25px;
+}
