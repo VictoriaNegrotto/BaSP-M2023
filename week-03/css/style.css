@@ -29,7 +29,6 @@ header{
     margin-top: 50px;
     font-size: 47px;
     font-weight: 700;
-    color: #FFFFFF;
 }
 
 /* Initial page */
@@ -101,7 +100,6 @@ header{
 }
 
 .information{
-    display: inline-block;
     width: 240px;
     height: 27px;
     color: black;
@@ -113,7 +111,6 @@ header{
 }
 
 .icon1{
-    display: inline-block;
     width: 30px;
     height: 30px;
     top: 6px;
@@ -123,7 +120,6 @@ header{
 }
 
 h1{
-    display: block;
     margin-inline-start: 300px;
     margin-inline-end: 250px;
     width: 600px;
