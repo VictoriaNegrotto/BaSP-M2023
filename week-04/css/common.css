@@ -5,3 +5,8 @@
 .flex{
     display: flex;
 }
+
+.conteiner-aside .conteiner-main{
+flex-direction: column;
+justify-content: space-between;
+}
