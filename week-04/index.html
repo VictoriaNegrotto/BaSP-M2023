@@ -22,23 +22,23 @@
     <!--Initial page-->
     <aside class="conteiner-aside flex">
         <ul>
-            <li>
+            <li class="list-aside flex">
                 <img src="../assets/img/icon7.png" alt="lupa" class="lupa">
                 <input type="Search" value="search" id="search">
             </li>
-            <li>
+            <li class="list-aside flex">
                 <img src="../assets/img/icon.png" alt="casita" class="aside-item">
                 <button class="aside-button">Home</button>
             </li>
-            <li>
+            <li class="list-aside flex">
                 <img src="../assets/img/icon1.png" alt="mas" class="aside-item">
                 <button class="aside-button">Sign Up</button>
             </li>
-            <li>
+            <li class="list-aside flex">
                 <img src="../assets/img/icon2.png" alt="personas" class="aside-item">
                 <button class="aside-button">Sign In</button>
             </li>
-            <li>
+            <li class="list-aside flex">
                 <img src="../assets/img/icon3.png" alt="cajita" class="aside-item">
                 <button class="aside-button">Contact</button>
             </li>
@@ -69,6 +69,7 @@
         </article>
         <!--Options-->
         <div class="separation"></div>
+        <div class="options flex">
         <article class="art-op">
             <img src="../assets/img/image 1.png" alt="sub" class="img1">
             <p class="tittle-op">Appointment Booking</p>
@@ -81,6 +82,8 @@
             <p class="info-op">Aenean ornare velit lacus, ac varius enim ullamcorper eu.
                 Proin aliquam facilisis ante interdum congue.</p>
         </article>
+        </div>
+        <div class="options flex">
         <article class="art-op">
             <img src="../assets/img/image 3.png" alt="tarjet" class="img1">
             <p class="tittle-op">Management and Membership</p>
@@ -93,23 +96,26 @@
             <p class="info-op">Aenean ornare velit lacus, ac varius enim ullamcorper eu.
                 Proin aliquam facilisis ante interdum congue.</p>
         </article>
+        </div>
         <div class="separation"></div>
         <!--Form-->
         <p id="regis">Registration and/or claim</p>
-        <form action="process.php" method="post">
-            <h3 class="form">Name</h3>
+        <form action="process.php" method="post" class="form flex">
+            <h3>Name</h3>
             <input type="text" name="name" class="box">
-            <h3 class="form">Lastname</h3>
+            <h3>Lastname</h3>
             <input type="text" name="lastname" class="box">
-            <h3 class="form">Email</h3>
+            <h3>Email</h3>
             <input type="text" name="email" class="box">
-            <div>
+            <div class="select flex">
                 <input type="radio" id="mbsandcst" class="circle">
                 <label for="mbsandcst" class="want">I want to know memberships and costs</label>
             </div>
+            <div class="select flex">
                 <input type="radio" id="qtorsg" class="circle">
                 <label for="qtorsg" class="want">I want make a question or suggestion</label>
-            <div>
+            </div>
+            <div class="select">
                 <input type="radio" id="claim" class="circle">
                 <label for="claim" class="want">I want to make a claim</label>
             </div>

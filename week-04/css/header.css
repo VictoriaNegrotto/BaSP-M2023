@@ -1,8 +1,10 @@
 header{
     width: 100%;
-    height: 117.92px;
+    height: 115px;
     background-color: #373867;
     color: #FFFFFF;
-    font-size: 40px ;
+    font-size: 33px ;
     justify-content: center;
+    align-items: center;
+
 }
