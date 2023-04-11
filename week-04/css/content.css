@@ -1,7 +1,6 @@
 .conteiner-main{
     flex-direction: column;
     justify-content: center;
-    width: 100%;
 }
 
 h1{ 
@@ -32,12 +31,13 @@ h1{
     color: #423C3C;
 }
 
-.option{
-    flex-direction: column;
-    width: 5%;
-    height: 10%;   
+.info-op{
+    display: none;
 }
 
+.section-option{
+    flex-direction: column;
+}
 
 #regis{
     margin-top: 15%;
@@ -45,12 +45,8 @@ h1{
     font-weight: 700;
     font-size: 25px;
     color: #373867;
-
 }
-
-.info-op{
-    display: none;    
-}
+    
 .form{
     flex-direction: column;
     border: none;
@@ -114,6 +110,7 @@ h1{
     }
 
     .activitie-option{
+        width: 100%;
         margin-top: 10%;
         margin-left: 10%;
     }
@@ -124,52 +121,105 @@ h1{
 
     .classes{
         width: 40%;
-        height: 45%;
+        height: 55%;
         object-fit: contain;
     }
 
     .member-dt{
+        margin-top: 5%;
         width: 100%
-    }
+        }
+
+        .list-member{
+            margin-top: 5%;
+        }
 
     .member{
         margin-top: 10%;
-        align-self: center;
-        width: 50%;
-        height: 40px;
+        width: 90%;
         border-radius: 5px;
         background-color: #2A2A32;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 40px;
         text-align: center;
         color: #FFFFFF;
     }
 
     .member1{
-        width: 50%;
-        height: 40px;
+        width: 90%;
         border-radius: 5px;
         background-color: #CCCBCB;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 40px;
         text-align: center;
         color: black;
     }
 
     .member2{
-        width: 50%;
-        height: 40px;
+        width: 90%;
         border-radius: 5px;
         background-color: #EDEDED;
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 40px;
         text-align: center;
         color: black;
     }
     
+    @media screen and (max-width: 600px) {
+        body{
+            text-align: center;
+        }
+     }
+
+     @media (min-width:600p){
+        .conteiner-main{
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 30%; 
+        }
+     }
+    @media (min-width: 1024px) {
+        .conteiner-main{
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 30%; 
+        }
+    
+        .info-op{
+            text-align: center;
+            display: block;
+        }
+
+        .div-op{
+            flex-direction: column;
+
+        }
+
+        .option{
+            flex-direction: column;
+            width: 35%;
+        }
+
+        .section-option{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .activitie-option{
+            display: inline-block;
+            width: 30%;
+        }
+    }   
+
+
+
+
