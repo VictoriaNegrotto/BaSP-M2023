@@ -38,13 +38,6 @@ h1{
     height: 10%;   
 }
 
-.art-op{
-    display: inline-block;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-    text-align: center;
-}
 
 #regis{
     margin-top: 15%;
@@ -56,7 +49,9 @@ h1{
 
 }
 
-
+.info-op{
+    display: none;    
+}
 .form{
     flex-direction: column;
     width: 40%;
@@ -68,12 +63,59 @@ h1{
 .box{
     background-color: #d9d9d9;
     border: none;
+    justify-content: center;
 }
 
 .select{
     width: 75%;
     align-items:flex-start;
     flex-wrap:nowrap;
+    vertical-align: middle;
 }
 
-  
+  #h3{
+    width: 30px;
+    font-weight: 400;
+    font-size: 25px; 
+    color: black;
+    text-align: center;
+  }
+
+  #comment{
+    width: 380px;
+    height: 175px;
+    align-items: center;
+  }
+
+  #send{
+    margin-top: 15%;
+    text-align: center;
+    width: 109px;
+    height: 33px;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    }
+
+    .history-section{
+        flex-direction: column;
+        text-align: center;
+        margin-top: 10%;
+    }
+    
+    #tittle.hist{
+        width: 50%;
+        color: #373867;
+        font-weight: 700;
+        font-size: 40px;
+    }
+
+    #history{
+        text-align: center;
+        width: 40%;
+        background-color: rgba(170, 206, 155, 0.25);
+        color: #2A2A32;
+        font-size: 20px;
+    }

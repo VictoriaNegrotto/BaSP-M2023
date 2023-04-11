@@ -4,31 +4,26 @@
 
 .flex{
     display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    text-align: center;
-    
 }
 
 .conteiner-aside .conteiner-main{
-flex-direction: column;
-justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.column{
+    flex-direction: column;
+}
+.center{
+    align-items: center;
+    text-align: center;
 }
 
 
-@media screen and (max-width: 1040px){
-    .conteiner-aside{
-        background-color: #F6F6F6;
-        width: 30%;
-        height: 100%;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
+@media (min-width: 601px) {
     .conteiner-main{
         flex-direction: column;
         justify-content: center;
         width: 70%;
     }
-    
 }
