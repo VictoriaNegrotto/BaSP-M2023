@@ -12,5 +12,11 @@ I corrected the html with what the tutor told me.
 I worked on the Css problem, based on html, I had to style it. It was a little difficult at first, but with the help of my team and the asynchronous material I was able to solve practically everything.
 I worked with class and id to be able to use styles. try to follow to the letter all the recommendations and good practices
 
+## Week-04
+# I worked on files of Css, i used flexbox and started work on Mobile First
+# Files: commo, content, header and side-bar, all of them with the style and Media Querie.
+# I worked with my team in programing pear, and alone too. They help me.
+# I think i've used the correct style of every file of css. 
+
 ## Author
 Victoria Negrotto
