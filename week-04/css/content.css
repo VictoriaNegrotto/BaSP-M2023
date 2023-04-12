@@ -3,6 +3,13 @@
     justify-content: center;
 }
 
+#hamburg{
+    position: fixed;
+    right: 90%;
+    bottom: 90%;
+    top: 10%;
+}
+
 h1{ 
     margin-inline-start: 20%;
     width: 50%;
@@ -37,6 +44,15 @@ h1{
     color: #423C3C;
 }
 
+.separation{
+    width: 200px;
+    height: 5px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-left: 150px;
+    background-color: #BEBEBE;
+}
+
 .info-op{
     display: none;
 }
@@ -46,7 +62,6 @@ h1{
 }
 
 #regis{
-    margin-top: 15%;
     text-align: center;
     font-weight: 700;
     font-size: 25px;
@@ -72,18 +87,29 @@ h1{
 }
 
 .select{
-    flex-wrap:nowrap;
-    vertical-align: middle;
-    font-size: 1rem;
+    margin-top: 5%;
+}
+.circle{
+    float: left;
+    width: 12px;
+    height: 12px;
 }
 
-  #h3{
+.want{
+    flex-direction: column;
+    line-height: 18px;
+    font-size: 1.2rem;
+    margin-left: 5%;
+
+}
+
+  #tittle-coment{
     margin-top: 2%;
-    width: 30px;
-    font-weight: 400;
-    font-size: 25px; 
+    width: 20%;
+    font-weight: 500;
+    font-size: 1rem; 
     color: black;
-    text-align: center;
+    margin-right:45%;
   }
 
   #comment{
@@ -105,7 +131,16 @@ h1{
     font-weight: 500;
     }
 
+.separation{
+    width: 200px;
+    height: 5px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    margin-left: 150px;
+    background-color: #BEBEBE;
+}
     #tittle-hist{
+        margin-top: 10%;
         color: #373867;
         font-size: 45px;
     }
@@ -117,6 +152,15 @@ h1{
         font-size: 1.5em;
     }
 
+    .separation{
+        width: 200px;
+        height: 5px;
+        margin-top: 75px;
+        margin-bottom: 75px;
+        margin-left: 150px;
+        background-color: #BEBEBE;
+    }
+
     #activities{
         margin-top: 10%;
         color: black;
@@ -125,33 +169,38 @@ h1{
     }
 
     .activitie-option{
+        gap: 15px;  
         width: 100%;
-        margin-top: 10%;
-        margin-left: 10%;
+        flex-direction: column;    
     }
 
-    .tittle-act{
-        margin-left: 10%;
-    }
-
-    .classes{
-        width: 40%;
-        height: 55%;
+    .activities img{
+        width: 200px;
+        height: 195px;
         object-fit: contain;
+    }
+
+    .separation{
+        width: 200px;
+        height: 5px;
+        margin-top: 75px;
+        margin-bottom: 75px;
+        margin-left: 150px;
+        background-color: #BEBEBE;
     }
 
     .member-dt{
         margin-top: 5%;
         width: 100%
-        }
+    }
 
-        .list-member{
-            margin-top: 5%;
-        }
+    .list-member{
+        margin-top: 5%;
+    }
 
     .member{
         margin-top: 10%;
-        width: 90%;
+        width: 35%;
         border-radius: 5px;
         background-color: #2A2A32;
         font-style: normal;
@@ -163,7 +212,7 @@ h1{
     }
 
     .member1{
-        width: 90%;
+        width: 35%;
         border-radius: 5px;
         background-color: #CCCBCB;
         font-style: normal;
@@ -175,7 +224,7 @@ h1{
     }
 
     .member2{
-        width: 90%;
+        width: 35%;
         border-radius: 5px;
         background-color: #EDEDED;
         font-style: normal;
@@ -186,7 +235,27 @@ h1{
         color: black;
     }
 
+    footer{
+    gap:20px;
+    margin-top: 5%;
+    margin-left: 10%;
+    }
+
+    #logo-r{
+        position: absolute;
+        margin-top: 10%;
+       right: 45%;
+    }
+
      @media (min-width:600px){
+        .footer{
+            margin-left: 35%;
+        }
+        #logo-r{
+            position: fixed;
+            left: 90%;
+            bottom: 5%;
+        }
      }
      
     @media (min-width: 1024px) {
@@ -195,6 +264,9 @@ h1{
             flex-direction: column;
             justify-content: center;
             margin-left: 30%; 
+        }
+        #hamburg{
+            display: none;
         }
     
         .info-op{
@@ -221,17 +293,32 @@ h1{
         }
 
         .activitie-option{
-            display: inline-block;
-            width: 30%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .activities img{
+            width: 230px;
+            height: 190px !important;
+        }
+        .activities{
+            flex-direction: column;
+        }
+
+        .separation{
+            width: 300px;
+            height: 5px;
+            margin-top: 75px;
+            margin-bottom: 75px;
+            margin-left: 350px;
+            background-color: #BEBEBE;
         }
 
         #logo-r{
             position: fixed;
             left: 90%;
             bottom: 5%;
-        }
-    }   
-
-
-
+        }   
+    }
 

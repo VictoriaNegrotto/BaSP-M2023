@@ -16,6 +16,12 @@ background-color: #ffffff;
 justify-content: left;
 }
 
+.lupa{
+    position: absolute;
+    right: 60px;
+    top: 10px;
+}
+
 .list-aside{
     align-items: center;
     height: 10%;
@@ -24,7 +30,7 @@ justify-content: left;
 }
 
 .aside-button{
-    width: 45%;
+    width: 85%;
     height: 100%;
     border-radius: 6px;
     border: none;
@@ -86,7 +92,7 @@ justify-content: left;
         }
 
     .aside-button{
-        width: 45%;
+        width: 60%;
         height: 100%;
         border-radius: 6px;
         border: none;
@@ -101,6 +107,11 @@ justify-content: left;
         float: left;
         width: 25px;
         height: 23px;
+    }
+    
+    #info{
+        margin-top: 10%;
+        text-align: center;
     }
 
     .list-info{
