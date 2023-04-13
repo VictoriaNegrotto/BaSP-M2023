@@ -248,9 +248,12 @@ h1{
     }
 
      @media (min-width:600px){
-        .footer{
-            margin-left: 35%;
-        }
+        .flex-column{
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        } 
+
         #logo-r{
             position: fixed;
             left: 90%;
@@ -313,6 +316,13 @@ h1{
             margin-bottom: 75px;
             margin-left: 350px;
             background-color: #BEBEBE;
+        }
+
+        .flex-column{
+            margin-left: 40%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
         #logo-r{
