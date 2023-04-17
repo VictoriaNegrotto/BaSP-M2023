@@ -1,4 +1,5 @@
-#Basp-M2023
+# Basp-M2023
+
 ## Week-01
 I worked with Figma, i created the Landing Page Screenflow and i worked in them wiht my group. I did the iphone, macbook and ipad Screenflow.
 Then we created the frame on differents screenflow and we work in them.
@@ -13,10 +14,19 @@ I worked on the Css problem, based on html, I had to style it. It was a little d
 I worked with class and id to be able to use styles. try to follow to the letter all the recommendations and good practices
 
 ## Week-04
-# I worked on files of Css, i used flexbox and started work on Mobile First
-# Files: commo, content, header and side-bar, all of them with the style and Media Querie.
-# I worked with my team in programing pear, and alone too. They help me.
-# I think i've used the correct style of every file of css. 
+### ~ I worked on files of Css, i used flexbox and started work on Mobile First
+### ~ Files: common, content, header and side-bar, all of them with the style and Media Querie.
+### ~ I worked with my team in programing pear, and alone too. They help me.
+### ~ I think i've used the correct style of every file of css. 
+
+## Week-05
+### ~ I worked on Java Script, in different exercises about Variables, Strings, Arrays, If-Else, For and Functions.
+### ~ I resolved the problem, studied and understand the Asyncronus material.
+### We programmed in pair with my team and resolved to doubt about JS.
+
+https://victorianegrotto.github.io/BaSP-M2023/week-05/
+
+
 
 ## Author
 Victoria Negrotto
