@@ -20,7 +20,7 @@ if (Math.random()< 0,5) {
 //“Anciano” si es mayor a 75 años.
 
 console.log('exercise 4, b:');
-var age = 19;
+var age = (Math.round(Math.random()*100));
 if (age<2) {
     alert('bebe');
 } else if (age<13){ 
@@ -35,6 +35,7 @@ if (age<2) {
     alert('Adulto mayor');
 } else {
     alert('Anciano')};
+    
 
 
 
