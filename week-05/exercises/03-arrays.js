@@ -46,4 +46,4 @@ console.log(mes.join('-'));
 
 console.log('exercise  3, g:');
 var mes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-console.log(mes.slice (4,11));
+console.log(mes.slice(4,11));
