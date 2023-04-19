@@ -12,13 +12,15 @@ aside{
 #search{
     width: 200px;
     height: 30px;
+    border: none;
     background-color: #ffffff;
     justify-content: left;
+    color: #ABA9A9;
 }
 
 .lupa{
     position: absolute;
-    right: 70px;
+    right: 80px;
     top: 10px;
 }
 
@@ -37,7 +39,7 @@ aside{
     background-color: #AACE9B;
     color: black;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 20px;
 }
 
@@ -67,10 +69,11 @@ aside{
 @media (min-width: 1024px) {
     .conteiner-aside{
         position: fixed;
+        top:100px;
         left: 0;
         display: flex;
         background-color: #F6F6F6;
-        width: 30%;
+        width: 25%;
         height: 100%;
         flex-direction: column;
         justify-content: space-between;
@@ -80,8 +83,10 @@ aside{
     #search{
         width: 255;
         height: 36px;
+        border: none;
         background-color: #ffffff;
         justify-content: left;
+        color: #ABA9A9;
         }
     
     .lupa{
@@ -103,7 +108,7 @@ aside{
         background-color: #AACE9B;
         color: black;
         text-align: center;
-        font-weight: 300;
+        font-weight: 400;
         font-size: 20px;
     }
         

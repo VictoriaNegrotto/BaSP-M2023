@@ -61,6 +61,14 @@ h1{
     flex-direction: column;
 }
 
+.tittle-op{
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+}
+
 #regis{
     text-align: center;
     font-weight: 700;
@@ -141,15 +149,20 @@ h1{
 }
 #tittle-hist{
     margin-top: 10%;
+    margin-bottom: 10%;
     color: #373867;
     font-size: 45px;
+    line-height: 47px;
+    font-weight: 700;
 }
 
 #history{
     width: 70%;
+    padding: 75px 40px;
     background-color: rgba(170, 206, 155, 0.25);
     color: #2A2A32;
     font-size: 1.5em;
+    
 }
 
 .separation{
@@ -293,6 +306,14 @@ footer{
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+}
+
+.tittle-op{
+    color: black;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
 }
 
 .activitie-option{
