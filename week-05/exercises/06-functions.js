@@ -41,7 +41,7 @@ function validateInteger (a) {
     return true;
   } 
   else { 
-   return false
+   return false;
    }
 }
 console.log(validateInteger (5));
