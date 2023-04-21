@@ -1,0 +1,144 @@
+header{
+    display: none;
+    width: 100%;
+    height: 115px;
+    background-color: #373867;
+    color: #FFFFFF;
+    font-size: 33px ;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner-main{
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{ 
+    display: flex;
+    margin-left: 27%;
+    margin-top: 25%;
+    margin-bottom: 25%;
+    width: 45%;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    line-height: 45px;
+    margin-top: 40px;
+    font-size: 40px;
+ }
+
+ #logo-r{
+    margin-top: 20%;
+    margin-bottom: 15%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.flex{
+    margin-top: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.flex-column{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15%;
+}
+.form{
+    margin-top: 18%;
+    flex-direction: column;
+    border: none;
+    font-size: 19pcx;
+    color:black;
+    justify-content: center;
+    font-size: 1rem;
+}
+.box{
+    margin-top: 2%;
+    background-color: white;
+    border-radius: 4px;
+    justify-content: center;
+    width: 30%;
+    height: 40px;
+}
+
+.circle{
+    float: left;
+    width: 12px;
+    height: 12px;
+}
+
+.link{
+    color: #AACE9B;
+
+}
+
+
+#send{
+    margin-top: 20%;
+    text-align: center;
+    width: 109px;
+    height: 33px;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    }
+
+
+@media (min-width:600px){
+    .flex-column{
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    } 
+    
+    #logo-r{
+        position: absolute;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        display: flex;
+        justify-content: center;
+    
+    }
+    }
+
+@media (min-width: 1024px) {
+    .header{
+        position: fixed;
+        top: 0;
+        display: flex;
+        width: 100%;
+        height: 100px;
+        background-color: #373867;
+        color: #FFFFFF;
+        font-size: 33px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .conteiner-main{
+        margin-top: 10%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #logo-r{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .flex-column{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+    
+}
