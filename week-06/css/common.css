@@ -6,10 +6,11 @@
     display: flex;
     text-align: center;
     justify-content: center;
+    justify-content: flex-start;
+
 }
 
 .conteiner-main{
-    
     flex-direction: column;
     justify-content: space-between;
 }

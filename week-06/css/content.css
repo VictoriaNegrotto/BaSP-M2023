@@ -11,8 +11,8 @@
 }
 
 h1{ 
-   margin-left: 27%;
-   margin-top: 20%;
+    margin-left: 27%;
+
     width: 45%;
     text-align: center;
     color: black;
@@ -256,7 +256,9 @@ footer{
     }
 
 #logo-r{
+    position: absolute;
     margin-top: 10%;
+    right: 45%;
 }
 
 @media (min-width:600px){
@@ -274,6 +276,7 @@ footer{
 
 @media (min-width: 1024px) {
 .conteiner-main{
+    margin-left: 30%;
     margin-top: 10%;
     flex-direction: column;
     justify-content: center;
@@ -337,16 +340,16 @@ footer{
 }
 
 .flex-column{
+    margin-left: 40%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 #logo-r{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+    position: fixed;
+    left: 90%;
+    bottom: 5%;
 }   
 }
 

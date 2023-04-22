@@ -74,9 +74,7 @@ h1{
 
 .link{
     color: #AACE9B;
-
 }
-
 
 #send{
     margin-top: 20%;
@@ -100,13 +98,13 @@ h1{
     
     #logo-r{
         position: absolute;
-        margin-top: 20%;
+        margin-top: 30%;
         margin-bottom: 20%;
         display: flex;
         justify-content: center;
     
     }
-    }
+}
 
 @media (min-width: 1024px) {
     .header{
