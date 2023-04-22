@@ -1,41 +1,70 @@
-.conteiner-main{
+.main {
     display: flex;
     justify-content: center;
     flex-direction: column;
 }
-.back{
+.back {
     display: flex;
-    margin-left: 90px;
-    margin-top: 50px;
+    width: 15%;
+    margin-left: 70%;
+    margin-top: 90px;
 }
 
-h1{ 
+.h1 {
     margin-left: 27%;
      width: 45%;
      text-align: center;
      color: black;
      font-weight: 700;
      line-height: 45px;
-     margin-top: 40px;
      font-size: 40px;
- }
+}
 
- .form2{
-    margin-top: 18%;
+.form2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    margin-left: 30%;
     flex-direction: column;
     border: none;
     font-size: 19pcx;
     color:black;
-    justify-content: center;
     font-size: 1rem;
 }
-.placeholder{
+
+.div-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.placeholder {
     margin-top: 2%;
     background-color: white;
     border-radius: 4px;
     justify-content: center;
-    width: 30%;
+    width: 50%;
     height: 40px;
+}
+
+#continue {
+    margin-top: 15%;
+    text-align: center;
+    width: 109px;
+    height: 33px;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#logo-r{
+    position: absolute;
+    display: flex;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 75%;
+    justify-content: flex-end;
 }
 
  @media (min-width:600px){
@@ -43,26 +72,52 @@ h1{
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
-    } 
-    
+    }
+
     #logo-r{
         position: absolute;
-    
     }
 }
 
 @media (min-width: 1024px) {
-   .conteiner-main{
-        margin-top: 10%;
+   .main{
         flex-direction:column;
         justify-content: center;
     }
 
-    .flex-column{
+    .back {
         display: flex;
-        flex-wrap: row;
+        width: 15%;
+        margin-left: 80%;
+        margin-top: 90px;
     }
-   
+
+    .form2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-left: 20%;
+        margin-top: 5%;
+        border: none;
+        font-size: 19pcx;
+        color:black;
+        font-size: 1rem;
+    }
+    .div-form {
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .placeholder {
+        margin-top: 2%;
+        background-color: white;
+        border-radius: 4px;
+        justify-content: center;
+        width: 45%;
+        height: 40px;
+    }
+    
     #logo-r{
         position: absolute;
         display: flex;
@@ -70,5 +125,5 @@ h1{
         margin-bottom: 10px;
         margin-left: 90%;
         justify-content: flex-start;
-    } 
+    }
  }

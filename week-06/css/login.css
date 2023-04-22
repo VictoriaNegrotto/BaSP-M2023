@@ -9,16 +9,20 @@ header{
     align-items: center;
 }
 
-.conteiner-main{
+.main-login{
+    margin-left: 25%;
     flex-direction: column;
     justify-content: center;
 }
 
-h1{ 
+.back1{
+    margin-left: 70%;
+}
+
+.h1-login{
     display: flex;
-    margin-left: 27%;
+    margin-left: 15%;
     margin-top: 25%;
-    margin-bottom: 25%;
     width: 45%;
     text-align: center;
     color: black;
@@ -28,28 +32,14 @@ h1{
     font-size: 40px;
  }
 
- #logo-r{
+ #logo-radium{
+    margin-left: 15%;
     margin-top: 20%;
     margin-bottom: 15%;
-    display: flex;
-    justify-content: center;
 
 }
 
-.flex{
-    margin-top: 20px;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-.flex-column{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-top: 15%;
-}
-.form{
-    margin-top: 18%;
+.form1{
     flex-direction: column;
     border: none;
     font-size: 19pcx;
@@ -57,18 +47,21 @@ h1{
     justify-content: center;
     font-size: 1rem;
 }
-.box{
+.placeholder1{
     margin-top: 2%;
     background-color: white;
     border-radius: 4px;
     justify-content: center;
-    width: 30%;
+    width: 60%;
     height: 40px;
+}
+.select1 {
+    margin-left: 10%;
 }
 
 .circle{
     float: left;
-    width: 12px;
+    width: 15px;
     height: 12px;
 }
 
@@ -76,7 +69,8 @@ h1{
     color: #AACE9B;
 }
 
-#send{
+#send2{
+    margin-left: 15%;
     margin-top: 20%;
     text-align: center;
     width: 109px;
@@ -90,24 +84,15 @@ h1{
 
 
 @media (min-width:600px){
-    .flex-column{
-        display:flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    } 
-    
-    #logo-r{
-        position: absolute;
-        margin-top: 30%;
-        margin-bottom: 20%;
-        display: flex;
-        justify-content: center;
-    
+
+    #logo-radium{
+        margin-top: 5%;
+        margin-left: 20%;
     }
 }
 
 @media (min-width: 1024px) {
-    .header{
+    header{
         position: fixed;
         top: 0;
         display: flex;
@@ -120,23 +105,58 @@ h1{
         align-items: center;
     }
 
-    .conteiner-main{
+    .main-login{
         margin-top: 10%;
         flex-direction: column;
         justify-content: center;
     }
 
-    #logo-r{
-        position: absolute;
-        display: flex;
-        justify-content: center;
-        margin-top: 40px;
+    .back1{
+        margin-left: 80%;
     }
 
-    .flex-column{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    .h1-login{
+        display: flex;
+        margin-left: 35%;
+        width: 45%;
+        text-align: center;
+        color: black;
+        font-weight: 700;
+        margin-top: 10%
     }
-    
+
+     .form1{
+        margin-left: 15%;
+        flex-direction: column;
+        justify-content: space-between;
+        border: none;
+        font-size: 19pcx;
+        color:black;
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .select1 {
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+
+    #send2{
+        margin-left: 20%;
+        margin-top: 20%;
+        text-align: center;
+        width: 109px;
+        height: 33px;
+        background-color: #AACE9B;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        }
+
+    #logo-radium{
+        margin-left: 35%;
+        margin-top: 10%;
+
+    }
 }
