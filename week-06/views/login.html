@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/login.js"></script>
     <title>Mega Rocket SA</title>
 </head>
 <body>
@@ -21,22 +22,31 @@
         </a>
         <h1 class="h1-login">Log In</h1>
             <img src="../../Assets/img/LOGO-RR 4.png" alt="logo" id="logo-radium">
-        <form action="process.php" method="post" class="form1">
-            <h3>Email</h3>
-            <input type="text" name="email" class="placeholder1">
-            <h3>Password</h3>
-            <input type="text" name="password" class="placeholder1">
+        <form action="process.php" method="post" class="form1" id="form1">
+            <label for="email">Email</label>
+            <input type="text" name="email" class="placeholder1" class="red-border" id="email" required>
+            <span id="error" class="none error">Must be email format</span>
+            <label for="password">Password</label>
+            <span id="error" class="none error">Must be 8 characters and alphanumeric</span>
+            <input type="text" name="password" class="placeholder1" class="red-border" id="password" required>
             <div class="select1">
                 <input type="radio" id="rememme" class="circle">
                 <label for="rm" >Remember me</label>
                 <a href="#" class="link">Forgot Paswword?</a>
             </div>
             <div>
-                <input type="send" name="send" value="send" id="send2">
+                <button type='submit' id="send2">Send</button>
             </div>
             <div class="select1">
                 <p>Are you new here?</p>
                 <a href="./sign-up.html" class="link">Register</a>
+            </div>
+            <div id="message">
+                <h3>Password must contain the following:</h3>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
             </div>
         </form>
     </main>

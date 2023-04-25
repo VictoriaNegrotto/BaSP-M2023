@@ -46,6 +46,11 @@
     height: 40px;
 }
 
+.placeholder[type="text"]:focus {
+    outline: none;
+    border-color: red;
+  }
+
 #continue {
     margin-top: 15%;
     text-align: center;

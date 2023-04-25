@@ -23,7 +23,7 @@ console.log('exercise 4, b:');
 var age = (Math.round(Math.random()*100));
 if (age<2) {
     alert('bebe');
-} else if (age<13){ 
+} else if (age<13){
     alert('niño');
 } else if (age<20) {
     alert('Adolescente');
@@ -35,7 +35,7 @@ if (age<2) {
     alert('Adulto mayor');
 } else {
     alert('Anciano')};
-    
+
 
 
 

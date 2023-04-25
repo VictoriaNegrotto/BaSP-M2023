@@ -86,7 +86,7 @@ function valor1(a) {
       alert('error');
      a = Math.round(a);
      return a;
-   } 
+   }
    else {
       return a;
    }

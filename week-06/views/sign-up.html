@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/sign-up.css">
+    <script src="../js/sign-up.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -23,8 +24,8 @@
         <h1 class="h1">Sign Up</h1>
         <form action="process.php" method="post" class="form2">
             <div class="div-form">
-                <label>Name</label>
-                <input type="text" name="name" class="placeholder">
+                <label for="name">Name</label>
+                <input type="text" name="name" class="placeholder" id="name" required>
                 <label>Lastname</label>
                 <input type="text" name="lastname" class="placeholder">
             </div>
@@ -57,7 +58,9 @@
                 <input type="password" name="repeat" class="placeholder">
             </div>
             <div>
+                <a href="#">
                 <input type="continue" name="continue" value="continue" id="continue">
+                </a>
             </div>
         </form>
         <a class="flex">
