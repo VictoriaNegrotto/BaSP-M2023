@@ -28,15 +28,16 @@ window.onload = function () {
 
   passwordInput.addEventListener("blur", function (event) {
     console.log(event.target.value);
-    if (!hasNumbersAndChar(event.target.value));
-    passwordInput.classList.add("red-border");
-    errorMessage[1].classList.remove("none");
+    if (!hasNumbersAndChar(event.target.value)) {
+      passwordInput.classList.add("red-border");
+      errorMessage[1].classList.remove("none");
+    }
   });
-  passwordInput.addEventListener("focus", function (event) {
+  passwordInput.addEventListener("focus", function () {
     passwordInput.classList.remove("red-border");
     errorMessage[1].classList.add("none");
   });
-  console.log(hasNumbersAndChar("holis123"));
+
   function hasNumbers(myString) {
     var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
@@ -51,16 +52,18 @@ window.onload = function () {
   function hasNumbersAndChar(myString) {
     var num = 0;
     var char = 0;
-
-    for (var x = 0; x < myString.length; x++) {
-      if (hasNumbers(myString[x])) {
-        num++;
-      } else {
-        char++;
+    if (myString.length >= 8) {
+      for (var x = 0; x < myString.length; x++) {
+        if (hasNumbers(myString[x])) {
+          num++;
+        } else {
+          char++;
+        }
+        if (num > 0 && char > 0) {
+          return true;
+        }
       }
-      if (num > 0 && char > 0) {
-        return true;
-      }
+      return false;
     }
     return false;
   }
