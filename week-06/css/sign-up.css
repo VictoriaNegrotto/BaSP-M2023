@@ -58,7 +58,8 @@
 }
 .none{
     display: none;
-    
+    border-color: green;
+
 }
 #continue {
     margin-top: 15%;

@@ -3,6 +3,7 @@ window.onload = function () {
   var emailInput = document.getElementById("email");
   var errorE = document.getElementById("error");
   console.log(emailInput, errorE);
+
   function validateEmail(email) {
     if (emailExpression.test(email)) {
       return true;

@@ -25,28 +25,35 @@
         <form action="process.php" method="post" class="form2">
             <div class="div-form">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="placeholder" class="red-border" id="name" required>
-                <span class="error none">Must be 3 characters or more</span>
+                <input type="text" name="name" class="placeholder" id="name">
+                <p class="error none">Must be 3 characters or more</p>
                 <label>Lastname</label>
                 <input type="text" name="lastname" class="placeholder" id="lastname">
+                <p class="error none">Must be 3 characters or more</p>
             </div>
             <div class="div-form">
                 <label>DNI</label>
-                <input type="text" name="dni" class="placeholder" id="dni">
+                <input type="text" name="dni" class="placeholder red-border" id="dni">
+                <p class="error none">Must be numbers and more 7 numbers</p>
                 <label>Date</label>
                 <input type="date" name="date" class="placeholder" id="date">
+                <p class="error none">Error</p>
             </div>
             <div class="div-form">
                 <label>Tel.</label>
                 <input type="text" name="telephone" class="placeholder" id="phone">
+                <p class="error none">Must be 10 numbers</p>
                 <label>Address</label>
                 <input type="text" name="address" class="placeholder" id="address">
+                <p class="error none">5 characters with letters, numers and spece bettwen</p>
             </div>
             <div class="div-form">
                 <label>City</label>
                 <input type="text" name="city" class="placeholder" id="city">
+                <p class ="error none">Alphanumeric format</p>
                 <label>Postal Code</label>
                 <input type="text" name="posta" class="placeholder" id="postal-code">
+                <p class="error none">Four or five numbers</p>
             </div>
             <div class="div-form">
                 <label>Email</label>
