@@ -1,7 +1,7 @@
 window.onload = function () {
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var emailInput = document.getElementById("email");
-  var errorE = document.getElementById("error");
+  var errorE = document.getElementsByClassName("error");
   console.log(emailInput, errorE);
 
   function validateEmail(email) {

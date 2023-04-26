@@ -298,46 +298,11 @@ window.onload = function () {
       return true;
     }
   }
-};
 
-/*for (let index = 0; index < input.length; index++) {
-        for (j = 0; j < chars.length; j++)
-        for
-        if (input[0]) {
+  //email
 
-        }
-    }
-  }*/
-
-/*function validateName(input) {
-    var value = input.value;
-  }
-
-  nameI.addEventListener("blur", function (event) {
-    var x = validateName(nameI);
-    return true;
-  });*/
-
-/*var nameInput = document.querySelector('input [name = "name"]')
-nameInput.onblur = function() {
-    console.log('blur')
-
-}
-*/
-
-/*date
-var gdate = document.getElementById("date");
-gdate.addEventListener();
-
-function validateDate() {
-  var gdate = gdateInput.value;
-}*/
-
-//email
-
-/*var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+  var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var emailInput = document.getElementById("email");
-  console.log(emailInput, errorE);
   function validateEmail(email) {
     if (emailExpression.test(email)) {
       return true;
@@ -348,28 +313,26 @@ function validateDate() {
     console.log("blur", emailInput.value);
     if (!validateEmail(event.target.value)) {
       emailInput.classList.add("red-border");
-      errorE.classList.remove("none");
+      errorS[8].classList.remove("none");
     }
   });
   emailInput.addEventListener("focus", function (event) {
     emailInput.classList.remove("red-border");
-    errorE.classList.add("none");
-  });*/
+    errorS[8].classList.add("none");
+  });
 
-/*password*/
-
-/*var passwordInput = document.getElementById("password");
+  //Password
+  var passwordInput = document.getElementById("password");
 
   passwordInput.addEventListener("blur", function (event) {
-    console.log(event.target.value);
     if (!hasNumbersAndChar(event.target.value)) {
       passwordInput.classList.add("red-border");
-      errorMessage[1].classList.remove("none");
+      errorS[9].classList.remove("none");
     }
   });
   passwordInput.addEventListener("focus", function () {
     passwordInput.classList.remove("red-border");
-    errorMessage[1].classList.add("none");
+    errorS[9].classList.add("none");
   });
 
   function hasNumbers(myString) {
@@ -400,4 +363,100 @@ function validateDate() {
       return false;
     }
     return false;
-  }*/
+  }
+
+  //Repeat Password
+  function validateRepeatPass(p1, p2) {
+    if (p1 == p2) {
+      return true;
+    }
+    return false;
+  }
+
+  var passwordR = document.getElementById("password-repeat");
+
+  passwordR.addEventListener("blur", function (event) {
+    if (!validateRepeatPass(event.target.value, passwordInput.value)) {
+      passwordR.classList.add("red-border");
+      errorS[10].classList.remove("none");
+    }
+  });
+  passwordR.addEventListener("focus", function () {
+    passwordR.classList.remove("red-border");
+    errorS[10].classList.add("none");
+  });
+
+  //button
+  var buttonform = document.getElementById("continue");
+  buttonform.onsubmit = function button(event) {
+    event.preventDefault();
+    if (
+      validateEmail(emailInput.value) &&
+      hasNumbersAndChar(passwordInput.value)
+    ) {
+      alert("email" + emailInput.value + "password" + passwordInput.value);
+    } else {
+      if (!validateEmail(emailInput.value)) {
+        alert("ERROR =" + emailInput.value);
+      }
+      if (!hasNumbersAndChar(passwordInput.value)) {
+        alert("ERROR =" + passwordInput.value);
+      }
+    }
+
+    if (validateName(nameI.value) && validateLastname(lastnameI.value)) {
+      alert("name=" + nameI.value + "lastname=" + lastnameI.value);
+    } else {
+      if (!validateName(nameI.value)) {
+        alert("ERROR=" + nameI.value);
+      }
+      if (!validateLastname(lastnameI.value)) {
+        alert("ERROR=" + lastnameI.value);
+      }
+    }
+
+    if (validateDni(dniInput) && validateDate(bTdate)) {
+      alert("dni=" + dniInput + "date=" + bTdate);
+    } else {
+      if (!validateDni(dniInput)) {
+        alert("ERROR=" + dniInput);
+      }
+      if (!validateDate(bTdate)) {
+        alert("ERROR=" + bTdate);
+      }
+    }
+  };
+};
+
+/*for (let index = 0; index < input.length; index++) {
+        for (j = 0; j < chars.length; j++)
+        for
+        if (input[0]) {
+
+        }
+    }
+*/
+
+/*function validateName(input) {
+    var value = input.value;
+  }
+
+  nameI.addEventListener("blur", function (event) {
+    var x = validateName(nameI);
+    return true;
+  });*/
+
+/*var nameInput = document.querySelector('input [name = "name"]')
+nameInput.onblur = function() {
+    console.log('blur')
+
+}
+*/
+
+/*date
+var gdate = document.getElementById("date");
+gdate.addEventListener();
+
+function validateDate() {
+  var gdate = gdateInput.value;
+}*/
