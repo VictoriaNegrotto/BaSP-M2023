@@ -425,6 +425,33 @@ window.onload = function () {
         alert("ERROR=" + bTdate);
       }
     }
+    if (validatePhone(phoneN) && validateAddress(addressN)) {
+      alert("phone=" + phoneN + "address" + addressN);
+    } else {
+      if (!validatePhone(phoneN)) {
+        alert("ERROR=" + phoneN);
+      }
+      if (!validateAddress(addressN)) {
+        alert("ERROR=" + addressN);
+      }
+    }
+    if (
+      validateCity(cityT) &&
+      validatePostal(postalC) &&
+      validateRepeatPass(passwordR)
+    ) {
+      alert("city=" + cityT + "postal" + postalC);
+    } else {
+      if (!validateCity(cityT) && validatePostal(postalC)) {
+        alert("ERROR=" + cityT);
+      }
+      if (!validatePostal(postalC)) {
+        alert("ERROR=" + postalC);
+      }
+      if (!validateRepeatPass(passwordR)) {
+        alert("ERROR=" + passwordR);
+      }
+    }
   };
 };
 
@@ -436,15 +463,6 @@ window.onload = function () {
         }
     }
 */
-
-/*function validateName(input) {
-    var value = input.value;
-  }
-
-  nameI.addEventListener("blur", function (event) {
-    var x = validateName(nameI);
-    return true;
-  });*/
 
 /*var nameInput = document.querySelector('input [name = "name"]')
 nameInput.onblur = function() {
