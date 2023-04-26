@@ -29,13 +29,13 @@ window.onload = function () {
   }
   var nameI = document.getElementById("name");
   nameI.addEventListener("blur", validateName, function (event) {
-    validateName(lastnameI.value);
+    validateName(nameI.value);
     nameI.classList.add("red-border");
     errorS[0].classList.remove("none");
   });
 
   nameI.addEventListener("focus", function () {
-    validateName(lastnameI.value);
+    validateName(nameI.value);
     nameI.classList.remove("red-border");
     errorS[0].classList.add("none");
   });
@@ -43,29 +43,33 @@ window.onload = function () {
   //Lastname
 
   function validateLetter(input) {
-    if (typeof input !== "string") {
+    if (input.toLowerCase() !== input.toUpperCase()) {
+      return true;
+    } else {
       return false;
     }
-    return input.toLowerCase() !== input.toUpperCase();
   }
   function validateLastname(input) {
-    if (input.length > 3) {
-      for (var index = 0; index < input.length; index++)
-        if (!validateLetter(input[index])) {
-          return false;
-        }
+    if (input.length >= 3 && validateLetter(input)) {
       return true;
+    } else {
+      return false;
     }
   }
-  var lastnameI = document.getElementById("lastname");
+  /*Dejo el cosole.log porque funciona la validacion pero en la pagina hay un error con EventListener*/
+  console.log(validateLetter("Negrotto"));
+  console.log(validateLastname("Negrotto"));
+
   lastnameI.addEventListener("blur", function (event) {
-    validateLastname(lastnameI.value);
-    lastnameI.classList.add("red-border");
-    errorS[1].classList.remove("none");
+    if (!validateLastname(event.target.value));
+    {
+      console.log("hola");
+      lastnameI.classList.add("red-border");
+      errorS[1].classList.remove("none");
+    }
   });
 
-  lastnameI.addEventListener("focus", function () {
-    validateLastname(lastnameI.value);
+  lastnameI.addEventListener("focus", function (event) {
     lastnameI.classList.remove("red-border");
     errorS[1].classList.add("none");
   });
@@ -78,32 +82,28 @@ window.onload = function () {
     for (var x = 0; x < string.length; x++) {
       if (numbers.includes(string[x])) {
         return true;
+      } else {
+        return false;
       }
     }
-    return false;
   }
   function validateDni(dni1) {
-    var num = 0;
-    if (dni1.length >= 7) {
-      for (var x = 0; x < dni1.length; x++) {
-        if (!validateDni(dni1[x])) {
-          return false;
-        } else {
-          return true;
-        }
-      }
+    if (dni1.length >= 7 && hasNumbers(dni1)) {
+      return true;
+    } else {
+      return false;
     }
   }
 
   var dniInput = document.getElementById("dni");
   dniInput.addEventListener("blur", function (event) {
-    validateDni(dniInput.value);
-    hasNumbers(event.target.value);
-    dniInput.classList.add("red-border");
-    errorS[2].classList.remove("none");
+    if (!validateDni(event.target.value));
+    {
+      dniInput.classList.add("red-border");
+      errorS[2].classList.remove("none");
+    }
   });
   dniInput.addEventListener("focus", function () {
-    validateDni(dniInput.value);
     dniInput.classList.remove("red-border");
     errorS[2].classList.add("none");
   });
@@ -290,7 +290,7 @@ window.onload = function () {
     return false;
   }
   function validatePostal(input) {
-    if (input.length > 4) {
+    if (input.length >= 4 && input.length <= 5) {
       for (var index = 0; index < input.length; index++)
         if (!hasNumbers(input[index])) {
           return false;
@@ -388,8 +388,7 @@ window.onload = function () {
 
   //button
   var buttonform = document.getElementById("continue");
-  buttonform.onsubmit = function button(event) {
-    event.preventDefault();
+  buttonform.onclick = function button(event) {
     if (
       validateEmail(emailInput.value) &&
       hasNumbersAndChar(passwordInput.value)
@@ -415,66 +414,42 @@ window.onload = function () {
       }
     }
 
-    if (validateDni(dniInput) && validateDate(bTdate)) {
-      alert("dni=" + dniInput + "date=" + bTdate);
+    if (validateDni(dniInput.value) && validateDate(bTdate.value)) {
+      alert("dni=" + dniInput.value + "date=" + bTdate.value);
     } else {
-      if (!validateDni(dniInput)) {
-        alert("ERROR=" + dniInput);
+      if (!validateDni(dniInput.value)) {
+        alert("ERROR=" + dniInput.value);
       }
-      if (!validateDate(bTdate)) {
-        alert("ERROR=" + bTdate);
+      if (!validateDate(bTdate.value)) {
+        alert("ERROR=" + bTdate.value);
       }
     }
-    if (validatePhone(phoneN) && validateAddress(addressN)) {
-      alert("phone=" + phoneN + "address" + addressN);
+    if (validatePhone(phoneN.value) && validateAddress(addressN.value)) {
+      alert("phone=" + phoneN.value + "address" + addressN.value);
     } else {
-      if (!validatePhone(phoneN)) {
-        alert("ERROR=" + phoneN);
+      if (!validatePhone(phoneN.value)) {
+        alert("ERROR=" + phoneN.value);
       }
-      if (!validateAddress(addressN)) {
-        alert("ERROR=" + addressN);
+      if (!validateAddress(addressN.value)) {
+        alert("ERROR=" + addressN.value);
       }
     }
     if (
-      validateCity(cityT) &&
-      validatePostal(postalC) &&
-      validateRepeatPass(passwordR)
+      validateCity(cityT.value) &&
+      validatePostal(postalC.value) &&
+      validateRepeatPass(passwordR.value)
     ) {
-      alert("city=" + cityT + "postal" + postalC);
+      alert("city=" + cityT.value + "postal" + postalC.value);
     } else {
-      if (!validateCity(cityT) && validatePostal(postalC)) {
-        alert("ERROR=" + cityT);
+      if (!validateCity(cityT.value) && validatePostal(postalC.value)) {
+        alert("ERROR=" + cityT.value);
       }
-      if (!validatePostal(postalC)) {
-        alert("ERROR=" + postalC);
+      if (!validatePostal(postalC.value)) {
+        alert("ERROR=" + postalC.value);
       }
-      if (!validateRepeatPass(passwordR)) {
-        alert("ERROR=" + passwordR);
+      if (!validateRepeatPass(passwordR.value)) {
+        alert("ERROR=" + passwordR.value);
       }
     }
   };
 };
-
-/*for (let index = 0; index < input.length; index++) {
-        for (j = 0; j < chars.length; j++)
-        for
-        if (input[0]) {
-
-        }
-    }
-*/
-
-/*var nameInput = document.querySelector('input [name = "name"]')
-nameInput.onblur = function() {
-    console.log('blur')
-
-}
-*/
-
-/*date
-var gdate = document.getElementById("date");
-gdate.addEventListener();
-
-function validateDate() {
-  var gdate = gdateInput.value;
-}*/
