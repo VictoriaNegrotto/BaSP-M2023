@@ -1,0 +1,32 @@
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+.flex{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    justify-content: flex-start;
+
+}
+
+.conteiner-main{
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.column{
+    flex-direction: column;
+}
+.center{
+    align-items: center;
+    text-align: center;
+}
+
+.contein{
+    object-fit: contain;
+}
+
+.justify{
+    justify-content: center;
+}

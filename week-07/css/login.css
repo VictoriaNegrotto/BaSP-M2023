@@ -1,0 +1,180 @@
+header{
+    display: none;
+    width: 100%;
+    height: 115px;
+    background-color: #373867;
+    color: #FFFFFF;
+    font-size: 33px ;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-login{
+    margin-left: 25%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back1{
+    margin-left: 70%;
+}
+
+.h1-login{
+    display: flex;
+    margin-left: 15%;
+    margin-top: 25%;
+    width: 45%;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    line-height: 45px;
+    margin-top: 40px;
+    font-size: 40px;
+ }
+
+ #logo-radium{
+    margin-left: 15%;
+    margin-top: 20%;
+    margin-bottom: 15%;
+
+}
+
+.form1{
+    flex-direction: column;
+    border: none;
+    font-size: 19pcx;
+    color:black;
+    justify-content: center;
+    font-size: 1rem;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+}
+.placeholder1{
+    margin-top: 5%;
+    background-color: white;
+    border-radius: 4px;
+    justify-content: center;
+    width: 60%;
+    height: 40px;
+}
+.error{
+    font-size: 10px;
+    color: red;
+}
+.red-border{
+    border-color: red;
+}
+.green-border {
+    border-color: darkgreen;
+}
+.none{
+    display: none;
+}
+.select1 {
+    margin-left: 10%;
+}
+
+.circle{
+    float: left;
+    width: 15px;
+    height: 12px;
+}
+
+.link{
+    color: #AACE9B;
+}
+
+#send2{
+    margin-left: 15%;
+    margin-top: 20%;
+    text-align: center;
+    width: 109px;
+    height: 33px;
+    background-color: #AACE9B;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    }
+
+
+@media (min-width:600px){
+
+    #logo-radium{
+        margin-top: 5%;
+        margin-left: 20%;
+    }
+}
+
+@media (min-width: 1024px) {
+    header{
+        position: fixed;
+        top: 0;
+        display: flex;
+        width: 100%;
+        height: 100px;
+        background-color: #373867;
+        color: #FFFFFF;
+        font-size: 33px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-login{
+        margin-top: 10%;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .back1{
+        margin-left: 80%;
+    }
+
+    .h1-login{
+        display: flex;
+        margin-left: 35%;
+        width: 45%;
+        text-align: center;
+        color: black;
+        font-weight: 700;
+        margin-top: 10%
+    }
+
+     .form1{
+        margin-left: 15%;
+        flex-direction: column;
+        justify-content: space-between;
+        border: none;
+        font-size: 19pcx;
+        color:black;
+        justify-content: center;
+        font-size: 1rem;
+    }
+
+    .select1 {
+        margin-left: 20%;
+        margin-top: 5%;
+    }
+
+    #send2{
+        margin-left: 20%;
+        margin-top: 20%;
+        text-align: center;
+        width: 109px;
+        height: 33px;
+        background-color: #AACE9B;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        }
+
+    #logo-radium{
+        margin-left: 35%;
+        margin-top: 10%;
+
+    }
+}
