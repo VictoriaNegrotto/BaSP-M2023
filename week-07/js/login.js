@@ -2,7 +2,6 @@ window.onload = function () {
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var emailInput = document.getElementById("email");
   var errorE = document.getElementById("error");
-  console.log(emailInput, errorE);
 
   function validateEmail(email) {
     if (emailExpression.test(email)) {
@@ -11,7 +10,6 @@ window.onload = function () {
     return false;
   }
   emailInput.addEventListener("blur", function (event) {
-    console.log("blur", emailInput.value);
     if (!validateEmail(event.target.value)) {
       emailInput.classList.add("red-border");
       errorE.classList.remove("none");
@@ -23,12 +21,9 @@ window.onload = function () {
   });
 
   /*password*/
-
   var passwordInput = document.getElementById("password");
   var errorMessage = document.querySelectorAll(".error");
-
   passwordInput.addEventListener("blur", function (event) {
-    console.log(event.target.value);
     if (!hasNumbersAndChar(event.target.value)) {
       passwordInput.classList.add("red-border");
       errorMessage[1].classList.remove("none");
@@ -69,14 +64,24 @@ window.onload = function () {
     return false;
   }
 
-  var loginform = document.getElementById("form1");
-  loginform.onsubmit = function button(event) {
+  var button = document.getElementById("send2");
+  button.addEventListener("click", function (event) {
+    var url = `https://api-rest-server.vercel.app/login?email=${emailInput.value}&password=${passwordInput.value}`;
     event.preventDefault();
     if (
       validateEmail(emailInput.value) &&
       hasNumbersAndChar(passwordInput.value)
     ) {
-      alert("email" + emailInput.value + "password" + passwordInput.value);
+      fetch(url)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          alert(data.msg);
+        })
+        .catch(function (error) {
+          alert(data.msg);
+        });
     } else {
       if (!validateEmail(emailInput.value)) {
         alert("ERROR =" + emailInput.value);
@@ -85,70 +90,5 @@ window.onload = function () {
         alert("ERROR =" + passwordInput.value);
       }
     }
-
-    function datafetch(emailInput, passwordInput) {
-      var url =
-        "https://api-rest-server.vercel.app/login/?email=$emailInput&password=passwordInput";
-      return new Promise(function (resolve, reject) {
-        fetch(url, { GET })
-          .then(function (response) {
-            if (response.status >= 200 && response.status < 300) {
-              response.json().then(function (datafetch) {
-                resolve(datafetch);
-              });
-            } else {
-              reject(new Error("Network response was not ok"));
-            }
-          })
-          .catch(function (error) {
-            throw new Error(`Unable to fetch data: ${error.message}`);
-          });
-      });
-    }
-
-    function getUserInfo(email, password) {
-      return new Promise(function (resolve, reject) {
-        if (
-          email === "rose@radiumrocket.com" &&
-          password === "BaSProfessional1"
-        ) {
-          resolve({
-            name: "Rose",
-            email: "rose@radiumrocket.com",
-            jobTitle: "Web Developer",
-          });
-        } else {
-          reject(new Error("Invalid email or password"));
-        }
-      });
-    }
-  };
-};
-
-/*function vicky('https://api-rest-server.vercel.app/login/?email=emailInput&password=passwordInput') {
-  return new vicky (function(resolve, reject) {
-    fetch('https://api-rest-server.vercel.app/login/?email=emailInput&password=passwordInput')
-      .then(function(response) {
-        if (response.ok) {
-          response.json().then(function(data) {
-            resolve(data);
-          });
-        } else {
-          reject(new Error('Network response was not ok'));
-        }
-      })
-      .catch(function(error) {
-        reject(error);
-      });
   });
-}*/
-
-/*fetch('https://api-rest-server.vercel.app/login/?email=emailInput&password=passwordInput')
-  .then(function(vicky) {
-    if()
-});
-  .catch(function(error) {
-
-});
-
-https://rickandmortyapi.com/api/character/?page=19*/
+};
