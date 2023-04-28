@@ -85,5 +85,70 @@ window.onload = function () {
         alert("ERROR =" + passwordInput.value);
       }
     }
+
+    function datafetch(emailInput, passwordInput) {
+      var url =
+        "https://api-rest-server.vercel.app/login/?email=$emailInput&password=passwordInput";
+      return new Promise(function (resolve, reject) {
+        fetch(url, { GET })
+          .then(function (response) {
+            if (response.status >= 200 && response.status < 300) {
+              response.json().then(function (datafetch) {
+                resolve(datafetch);
+              });
+            } else {
+              reject(new Error("Network response was not ok"));
+            }
+          })
+          .catch(function (error) {
+            throw new Error(`Unable to fetch data: ${error.message}`);
+          });
+      });
+    }
+
+    function getUserInfo(email, password) {
+      return new Promise(function (resolve, reject) {
+        if (
+          email === "rose@radiumrocket.com" &&
+          password === "BaSProfessional1"
+        ) {
+          resolve({
+            name: "Rose",
+            email: "rose@radiumrocket.com",
+            jobTitle: "Web Developer",
+          });
+        } else {
+          reject(new Error("Invalid email or password"));
+        }
+      });
+    }
   };
 };
+
+/*function vicky('https://api-rest-server.vercel.app/login/?email=emailInput&password=passwordInput') {
+  return new vicky (function(resolve, reject) {
+    fetch('https://api-rest-server.vercel.app/login/?email=emailInput&password=passwordInput')
+      .then(function(response) {
+        if (response.ok) {
+          response.json().then(function(data) {
+            resolve(data);
+          });
+        } else {
+          reject(new Error('Network response was not ok'));
+        }
+      })
+      .catch(function(error) {
+        reject(error);
+      });
+  });
+}*/
+
+/*fetch('https://api-rest-server.vercel.app/login/?email=emailInput&password=passwordInput')
+  .then(function(vicky) {
+    if()
+});
+  .catch(function(error) {
+
+});
+
+https://rickandmortyapi.com/api/character/?page=19*/
