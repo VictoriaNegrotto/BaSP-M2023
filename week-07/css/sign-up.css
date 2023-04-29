@@ -38,7 +38,7 @@
     flex-wrap: wrap;
 }
 .placeholder {
-    margin-top: 2%;
+    margin-top: 3%;
     background-color: white;
     border-radius: 4px;
     justify-content: center;
@@ -102,7 +102,7 @@
     .back {
         display: flex;
         width: 15%;
-        margin-left: 80%;
+        margin-left: 90%;
         margin-top: 90px;
     }
 
@@ -131,7 +131,7 @@
         width: 45%;
         height: 40px;
     }
-    
+
     #logo-r{
         position: absolute;
         display: flex;

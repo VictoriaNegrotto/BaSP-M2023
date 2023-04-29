@@ -13,13 +13,13 @@ window.onload = function () {
   //Name
 
   function validateLetter(input) {
-    if (typeof input !== "string") {
+    if (typeof input !== string) {
       return false;
     }
     return input.toLowerCase() !== input.toUpperCase();
   }
   function validateName(input) {
-    if (input.length > 3) {
+    if (input.length >= 3) {
       for (var index = 0; index < input.length; index++)
         if (!validateLetter(input[index])) {
           return false;
@@ -27,43 +27,33 @@ window.onload = function () {
       return true;
     }
   }
+
   var nameI = document.getElementById("name");
-  nameI.addEventListener("blur", validateName, function (event) {
-    validateName(nameI.value);
-    nameI.classList.add("red-border");
-    errorS[0].classList.remove("none");
+  nameI.addEventListener("blur", function (event) {
+    if (!validateName(nameI.value)) {
+      nameI.classList.add("red-border");
+      errorS[0].classList.remove("none");
+    }
   });
 
   nameI.addEventListener("focus", function () {
-    validateName(nameI.value);
     nameI.classList.remove("red-border");
     errorS[0].classList.add("none");
   });
 
   //Lastname
 
-  function validateLetter(input) {
-    if (input.toLowerCase() !== input.toUpperCase()) {
+  function validateLastname(input1) {
+    if (input1.length >= 3) {
+      for (var index = 0; index < input1.length; index++)
+        if (!validateLetter(input1[index])) {
+          return false;
+        }
       return true;
-    } else {
-      return false;
     }
   }
-  function validateLastname(input) {
-    if (input.length >= 3 && validateLetter(input)) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-  /*Dejo el cosole.log porque funciona la validacion pero en la pagina hay un error con EventListener*/
-  console.log(validateLetter("Negrotto"));
-  console.log(validateLastname("Negrotto"));
-
   lastnameI.addEventListener("blur", function (event) {
-    if (!validateLastname(event.target.value));
-    {
-      console.log("hola");
+    if (!validateLastname(event.target.value)) {
       lastnameI.classList.add("red-border");
       errorS[1].classList.remove("none");
     }
@@ -80,15 +70,14 @@ window.onload = function () {
     var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
     for (var x = 0; x < string.length; x++) {
-      if (numbers.includes(string[x])) {
-        return true;
-      } else {
+      if (!numbers.includes(string[x])) {
         return false;
       }
+      return true;
     }
   }
   function validateDni(dni1) {
-    if (dni1.length >= 7 && hasNumbers(dni1)) {
+    if (dni1.length >= 8 && hasNumbers(dni1)) {
       return true;
     } else {
       return false;
@@ -97,8 +86,7 @@ window.onload = function () {
 
   var dniInput = document.getElementById("dni");
   dniInput.addEventListener("blur", function (event) {
-    if (!validateDni(event.target.value));
-    {
+    if (!validateDni(event.target.value)) {
       dniInput.classList.add("red-border");
       errorS[2].classList.remove("none");
     }
@@ -132,37 +120,23 @@ window.onload = function () {
 
   //Phone
 
-  function hasNumbers(phone) {
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-    for (var x = 0; x < phone.length; x++) {
-      if (numbers.includes(phone[x])) {
-        return true;
-      }
-    }
-    return false;
-  }
   function validatePhone(phone1) {
-    if (phone1.length == 10) {
-      for (var x = 11; x > phone1.length; x++) {
-        if (!validatePhone(phone1[x])) {
-          return false;
-        } else {
-          return true;
-        }
-      }
+    if (phone1.length == 10 && hasNumbers(phone1)) {
+      return true;
+    } else {
+      return false;
     }
   }
 
   var phoneN = document.getElementById("phone");
   phoneN.addEventListener("blur", function (event) {
-    validatePhone(phoneN.value);
-    hasNumbers(event.target.value);
-    phoneN.classList.add("red-border");
-    errorS[4].classList.remove("none");
+    if (!validatePhone(phoneN.value)) {
+      hasNumbers(event.target.value);
+      phoneN.classList.add("red-border");
+      errorS[4].classList.remove("none");
+    }
   });
   phoneN.addEventListener("focus", function () {
-    validatePhone(phoneN.value);
     phoneN.classList.remove("red-border");
     errorS[4].classList.add("none");
   });
@@ -206,17 +180,6 @@ window.onload = function () {
   function spaceB(string) {
     if (string == " ") {
       return true;
-    }
-    return false;
-  }
-
-  function hasNumbers(num) {
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-    for (var x = 0; x < num.length; x++) {
-      if (numbers.includes(num[x])) {
-        return true;
-      }
     }
     return false;
   }
@@ -279,16 +242,6 @@ window.onload = function () {
     errorS[7].classList.add("none");
   });
 
-  function hasNumbers(myString) {
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-    for (var x = 0; x < myString.length; x++) {
-      if (numbers.includes(myString[x])) {
-        return true;
-      }
-    }
-    return false;
-  }
   function validatePostal(input) {
     if (input.length >= 4 && input.length <= 5) {
       for (var index = 0; index < input.length; index++)
@@ -335,17 +288,6 @@ window.onload = function () {
     errorS[9].classList.add("none");
   });
 
-  function hasNumbers(myString) {
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-    for (var x = 0; x < myString.length; x++) {
-      if (numbers.includes(myString[x])) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   function hasNumbersAndChar(myString) {
     var num = 0;
     var char = 0;
@@ -387,69 +329,99 @@ window.onload = function () {
   });
 
   //button
-  var buttonform = document.getElementById("continue");
-  buttonform.onclick = function button(event) {
+  var button = document.getElementById("continue");
+  button.addEventListener("click", function (event) {
+    var urlSignUp = `https://api-rest-server.vercel.app/signup?name=${nameI.value}&lastName=${lastnameI.value}&dni=${dniInput.value}&dob=${bTdate.value})}&phone=${phoneN.value}&address=${addressN.value}&posta=${postalC.value}&city=${cityT.value}&email=${emailInput.value}&password=${passwordInput.value}&repeat=${passwordR.value}`;
+    event.preventDefault();
     if (
       validateEmail(emailInput.value) &&
-      hasNumbersAndChar(passwordInput.value)
+      hasNumbersAndChar(passwordInput.value) &&
+      validateName(nameI.value) &&
+      validateLastname(lastnameI.value) &&
+      validateDni(dniInput.value) &&
+      validateDate(bTdate.value) &&
+      validatePhone(phoneN.value) &&
+      validateAddress(addressN.value) &&
+      validateCity(cityT.value) &&
+      validatePostal(postalC.value) &&
+      validateRepeatPass(passwordR.value, passwordInput.value)
     ) {
-      alert("email" + emailInput.value + "password" + passwordInput.value);
+      fetch(urlSignUp)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          localStorage.setItem("email", emailInput.value);
+          localStorage.setItem("password", passwordInput.value);
+          localStorage.setItem("name", nameI.value);
+          localStorage.setItem("lastname", lastnameI.value);
+          localStorage.setItem("dni", dniInput.value);
+          localStorage.setItem("date", bTdate.value);
+          localStorage.setItem("phone", phoneN.value);
+          localStorage.setItem("address", addressN.value);
+          localStorage.setItem("city", cityT.value);
+          localStorage.setItem("postal", postalC.value);
+          alert(data.msg);
+        })
+        .catch(function (error) {
+          alert(data.msg);
+        });
+      alert(
+        "email" +
+          emailInput.value +
+          "\npassword" +
+          passwordInput.value +
+          "\nname=" +
+          nameI.value +
+          "\nlastname=" +
+          lastnameI.value +
+          "\ndni=" +
+          dniInput.value +
+          "\ndate=" +
+          bTdate.value +
+          "\nphone=" +
+          phoneN.value +
+          "\naddress" +
+          addressN.value +
+          "\ncity=" +
+          cityT.value +
+          "\npostal" +
+          postalC.value
+      );
     } else {
       if (!validateEmail(emailInput.value)) {
         alert("ERROR =" + emailInput.value);
       }
       if (!hasNumbersAndChar(passwordInput.value)) {
-        alert("ERROR =" + passwordInput.value);
+        alert("ERRORPASS1 =" + passwordInput.value);
       }
-    }
-
-    if (validateName(nameI.value) && validateLastname(lastnameI.value)) {
-      alert("name=" + nameI.value + "lastname=" + lastnameI.value);
-    } else {
       if (!validateName(nameI.value)) {
         alert("ERROR=" + nameI.value);
       }
       if (!validateLastname(lastnameI.value)) {
         alert("ERROR=" + lastnameI.value);
       }
-    }
-
-    if (validateDni(dniInput.value) && validateDate(bTdate.value)) {
-      alert("dni=" + dniInput.value + "date=" + bTdate.value);
-    } else {
       if (!validateDni(dniInput.value)) {
         alert("ERROR=" + dniInput.value);
       }
       if (!validateDate(bTdate.value)) {
         alert("ERROR=" + bTdate.value);
       }
-    }
-    if (validatePhone(phoneN.value) && validateAddress(addressN.value)) {
-      alert("phone=" + phoneN.value + "address" + addressN.value);
-    } else {
       if (!validatePhone(phoneN.value)) {
         alert("ERROR=" + phoneN.value);
       }
       if (!validateAddress(addressN.value)) {
         alert("ERROR=" + addressN.value);
       }
-    }
-    if (
-      validateCity(cityT.value) &&
-      validatePostal(postalC.value) &&
-      validateRepeatPass(passwordR.value)
-    ) {
-      alert("city=" + cityT.value + "postal" + postalC.value);
-    } else {
-      if (!validateCity(cityT.value) && validatePostal(postalC.value)) {
+      if (!validateCity(cityT.value)) {
         alert("ERROR=" + cityT.value);
       }
       if (!validatePostal(postalC.value)) {
         alert("ERROR=" + postalC.value);
       }
-      if (!validateRepeatPass(passwordR.value)) {
-        alert("ERROR=" + passwordR.value);
+      if (!validateRepeatPass(passwordR.value, passwordInput.value)) {
+        alert("ERRORPASS2=" + passwordR.value);
       }
     }
-  };
+  });
 };
