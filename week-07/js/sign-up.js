@@ -13,7 +13,7 @@ window.onload = function () {
   //Name
 
   function validateLetter(input) {
-    if (typeof input !== string) {
+    if (typeof input !== "string") {
       return false;
     }
     return input.toLowerCase() !== input.toUpperCase();
@@ -107,6 +107,16 @@ window.onload = function () {
     return false;
   }
 
+  function changeDateFormat(date) {
+    var dateArray = date.split("-");
+
+    year = dateArray[0];
+    month = dateArray[1];
+    day = dateArray[2];
+
+    dateArray = month + "/" + day + "/" + year;
+    return dateArray;
+  }
   bTdate.addEventListener("blur", function (event) {
     if (!validateDate(event.target.value)) {
       bTdate.classList.add("red-border");
@@ -329,9 +339,33 @@ window.onload = function () {
   });
 
   //button
+  var validation = [];
   var button = document.getElementById("continue");
   button.addEventListener("click", function (event) {
-    var urlSignUp = `https://api-rest-server.vercel.app/signup?name=${nameI.value}&lastName=${lastnameI.value}&dni=${dniInput.value}&dob=${bTdate.value})}&phone=${phoneN.value}&address=${addressN.value}&posta=${postalC.value}&city=${cityT.value}&email=${emailInput.value}&password=${passwordInput.value}&repeat=${passwordR.value}`;
+    urlSignUp =
+      "https://api-rest-server.vercel.app/signup?" +
+      "name=" +
+      nameI.value +
+      "&lastName=" +
+      lastnameI.value +
+      "&dni=" +
+      dniInput.value +
+      "&dob=" +
+      changeDateFormat(bTdate.value) +
+      "&phone=" +
+      phoneN.value +
+      "&address=" +
+      addressN.value +
+      "&zip=" +
+      postalC.value +
+      "&city=" +
+      cityT.value +
+      "&email=" +
+      emailInput.value +
+      "&password=" +
+      passwordInput.value +
+      "&password=" +
+      passwordR.value;
     event.preventDefault();
     if (
       validateEmail(emailInput.value) &&
@@ -351,22 +385,15 @@ window.onload = function () {
           return response.json();
         })
         .then(function (data) {
-          localStorage.setItem("email", emailInput.value);
-          localStorage.setItem("password", passwordInput.value);
-          localStorage.setItem("name", nameI.value);
-          localStorage.setItem("lastname", lastnameI.value);
-          localStorage.setItem("dni", dniInput.value);
-          localStorage.setItem("date", bTdate.value);
-          localStorage.setItem("phone", phoneN.value);
-          localStorage.setItem("address", addressN.value);
-          localStorage.setItem("city", cityT.value);
-          localStorage.setItem("postal", postalC.value);
-          alert(data.msg);
+          if (!data.success) {
+            throw new Error(data);
+          }
+          alert(JSON.stringify(data));
         })
         .catch(function (error) {
-          alert(data.msg);
+          alert(error.msg);
         });
-      alert(
+      /*alert(
         "email" +
           emailInput.value +
           "\npassword" +
@@ -387,8 +414,8 @@ window.onload = function () {
           cityT.value +
           "\npostal" +
           postalC.value
-      );
-    } else {
+      );*/
+      /*} else {
       if (!validateEmail(emailInput.value)) {
         alert("ERROR =" + emailInput.value);
       }
@@ -422,6 +449,24 @@ window.onload = function () {
       if (!validateRepeatPass(passwordR.value, passwordInput.value)) {
         alert("ERRORPASS2=" + passwordR.value);
       }
+    }*/
+      /*nameI.addEventListener("focusout", function () {
+      localStorage.setItem("name", nameI.value);
+    });
+    lastnameI.addEventListener("focusout", function () {
+      localStorage.setItem("lastname", lastnameI.value);
+    });
+    dniInput.addEventListener("focusout", function () {
+      localStorage.setItem("dni", dniInput.value);
+    });*/
+
+      /*localStorage.setItem("email", emailInput.value);
+      localStorage.setItem("password",passwordInput.value);
+      localStorage.setItem("date", bTdate.value);
+      localStorage.setItem("phone", phoneN.value);
+      localStorage.setItem("address", addressN.value);
+      localStorage.setItem("city", cityT.value);
+      localStorage.setItem("postal", postalC.value);*/
     }
   });
 };
