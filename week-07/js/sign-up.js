@@ -273,7 +273,6 @@ window.onload = function () {
     return false;
   }
   emailInput.addEventListener("blur", function (event) {
-    console.log("blur", emailInput.value);
     if (!validateEmail(event.target.value)) {
       emailInput.classList.add("red-border");
       errorS[8].classList.remove("none");
@@ -339,7 +338,6 @@ window.onload = function () {
   });
 
   //button
-  var validation = [];
   var button = document.getElementById("continue");
   button.addEventListener("click", function (event) {
     urlSignUp =
@@ -385,13 +383,24 @@ window.onload = function () {
           return response.json();
         })
         .then(function (data) {
-          if (!data.success) {
-            throw new Error(data);
+          if (data.hasOwnProperty("data")) {
+            var keys = Object.keys(data.data);
+            for (var i = 1; i < keys.length; i++) {
+              var key = keys[i];
+              if (data.data.hasOwnProperty(key)) {
+                var value = data.data[key];
+                localStorage.setItem(key, value);
+                alert(key + ": " + value);
+              }
+            }
+          } else if (data.hasOwnProperty("errors")) {
+            for (var i = 0; i < data.errors.length; i++) {
+              var error = data.errors[i];
+              if (error.hasOwnProperty("msg")) {
+                alert(error.msg);
+              }
+            }
           }
-          alert(JSON.stringify(data));
-        })
-        .catch(function (error) {
-          alert(error.msg);
         });
       /*alert(
         "email" +
@@ -461,7 +470,7 @@ window.onload = function () {
     });*/
 
       /*localStorage.setItem("email", emailInput.value);
-      localStorage.setItem("password",passwordInput.value);
+      localStorage.setItem("password", passwordInput.value);
       localStorage.setItem("date", bTdate.value);
       localStorage.setItem("phone", phoneN.value);
       localStorage.setItem("address", addressN.value);
@@ -469,4 +478,18 @@ window.onload = function () {
       localStorage.setItem("postal", postalC.value);*/
     }
   });
+  document.addEventListener("DOMContentLoaded", ReloadInfo());
+  function ReloadInfo() {
+    nameI.value = localStorage.getItem("name");
+    lastnameI.value = localStorage.getItem("lastName");
+    addressN.value = localStorage.getItem("address");
+    postalC.value = localStorage.getItem("zip");
+    bTdate.value = localStorage.getItem("dob");
+    phoneN.value = localStorage.getItem("phone");
+    dniInput.value = localStorage.getItem("dni");
+    cityT.value = localStorage.getItem("city");
+    emailInput.value = localStorage.getItem("email");
+    passwordInput.value = localStorage.getItem("password");
+    passwordR.value = localStorage.getItem("password");
+  }
 };
