@@ -378,87 +378,90 @@ window.onload = function () {
       validatePostal(postalC.value) &&
       validateRepeatPass(passwordR.value, passwordInput.value)
     ) {
+      alert(
+      "email" +
+        emailInput.value +
+        "\npassword" +
+        passwordInput.value +
+        "\nname=" +
+        nameI.value +
+        "\nlastname=" +
+        lastnameI.value +
+        "\ndni=" +
+        dniInput.value +
+        "\ndate=" +
+        bTdate.value +
+        "\nphone=" +
+        phoneN.value +
+        "\naddress" +
+        addressN.value +
+        "\ncity=" +
+        cityT.value +
+        "\npostal" +
+        postalC.value
+    )}
       fetch(urlSignUp)
         .then(function (response) {
           return response.json();
         })
-        .then(function (data) {
+        .then(function (infouser) {
           if (data.hasOwnProperty("data")) {
-            var keys = Object.keys(data.data);
+            var keys = Object.keys(infouser.data);
             for (var i = 1; i < keys.length; i++) {
               var key = keys[i];
-              if (data.data.hasOwnProperty(key)) {
-                var value = data.data[key];
+              if (infouser.data.hasOwnProperty(key)) {
+                var value = infouser.data[key];
                 localStorage.setItem(key, value);
                 alert(key + ": " + value);
               }
             }
-          } else if (data.hasOwnProperty("errors")) {
-            for (var i = 0; i < data.errors.length; i++) {
-              var error = data.errors[i];
+          } else if (infouser.hasOwnProperty("errors")) {
+            for (var i = 0; i < infouser.errors.length; i++) {
+              var error = infouser.errors[i];
               if (error.hasOwnProperty("msg")) {
                 alert(error.msg);
               }
             }
           }
-        });
-      /*alert(
-        "email" +
-          emailInput.value +
-          "\npassword" +
-          passwordInput.value +
-          "\nname=" +
-          nameI.value +
-          "\nlastname=" +
-          lastnameI.value +
-          "\ndni=" +
-          dniInput.value +
-          "\ndate=" +
-          bTdate.value +
-          "\nphone=" +
-          phoneN.value +
-          "\naddress" +
-          addressN.value +
-          "\ncity=" +
-          cityT.value +
-          "\npostal" +
-          postalC.value
-      );*/
-      /*} else {
-      if (!validateEmail(emailInput.value)) {
-        alert("ERROR =" + emailInput.value);
-      }
-      if (!hasNumbersAndChar(passwordInput.value)) {
-        alert("ERRORPASS1 =" + passwordInput.value);
-      }
-      if (!validateName(nameI.value)) {
-        alert("ERROR=" + nameI.value);
-      }
-      if (!validateLastname(lastnameI.value)) {
-        alert("ERROR=" + lastnameI.value);
-      }
-      if (!validateDni(dniInput.value)) {
-        alert("ERROR=" + dniInput.value);
-      }
-      if (!validateDate(bTdate.value)) {
-        alert("ERROR=" + bTdate.value);
-      }
-      if (!validatePhone(phoneN.value)) {
-        alert("ERROR=" + phoneN.value);
-      }
-      if (!validateAddress(addressN.value)) {
-        alert("ERROR=" + addressN.value);
-      }
-      if (!validateCity(cityT.value)) {
-        alert("ERROR=" + cityT.value);
-      }
-      if (!validatePostal(postalC.value)) {
-        alert("ERROR=" + postalC.value);
-      }
-      if (!validateRepeatPass(passwordR.value, passwordInput.value)) {
-        alert("ERRORPASS2=" + passwordR.value);
-      }
-    }*/
+          })
+        .catch(function() {
+          alert("ERROR")})
+
+             if (!validateEmail(emailInput.value)) {
+              alert("ERROR =" + emailInput.value);
+            }
+            if (!hasNumbersAndChar(passwordInput.value)) {
+              alert("ERRORPASS1 =" + passwordInput.value);
+            }
+            if (!validateName(nameI.value)) {
+              alert("ERROR=" + nameI.value);
+            }
+            if (!validateLastname(lastnameI.value)) {
+              alert("ERROR=" + lastnameI.value);
+            }
+            if (!validateDni(dniInput.value)) {
+              alert("ERROR=" + dniInput.value);
+            }
+            if (!validateDate(bTdate.value)) {
+              alert("ERROR=" + bTdate.value);
+            }
+            if (!validatePhone(phoneN.value)) {
+              alert("ERROR=" + phoneN.value);
+            }
+            if (!validateAddress(addressN.value)) {
+              alert("ERROR=" + addressN.value);
+            }
+            if (!validateCity(cityT.value)) {
+              alert("ERROR=" + cityT.value);
+            }
+            if (!validatePostal(postalC.value)) {
+              alert("ERROR=" + postalC.value);
+            }
+            if (!validateRepeatPass(passwordR.value, passwordInput.value)) {
+              alert("ERRORPASS2=" + passwordR.value);
+            }
+          })
+
       /*nameI.addEventListener("focusout", function () {
       localStorage.setItem("name", nameI.value);
     });
@@ -476,20 +479,24 @@ window.onload = function () {
       localStorage.setItem("address", addressN.value);
       localStorage.setItem("city", cityT.value);
       localStorage.setItem("postal", postalC.value);*/
-    }
-  });
   document.addEventListener("DOMContentLoaded", ReloadInfo());
   function ReloadInfo() {
     nameI.value = localStorage.getItem("name");
     lastnameI.value = localStorage.getItem("lastName");
     addressN.value = localStorage.getItem("address");
     postalC.value = localStorage.getItem("zip");
-    bTdate.value = localStorage.getItem("dob");
+    changeDateFormat(bTdate.value) = localStorage.getItem("dob");
     phoneN.value = localStorage.getItem("phone");
     dniInput.value = localStorage.getItem("dni");
     cityT.value = localStorage.getItem("city");
     emailInput.value = localStorage.getItem("email");
     passwordInput.value = localStorage.getItem("password");
-    passwordR.value = localStorage.getItem("password");
-  }
-};
+    passwordR.value = localStorage.getItem("password")
+  };
+}
+
+
+
+
+
+
