@@ -10,8 +10,6 @@ window.onload = function () {
   var passwordR = document.getElementById("password-repeat");
   var errorS = document.getElementsByClassName("error");
 
-  //Name
-
   function validateLetter(input) {
     if (typeof input !== "string") {
       return false;
@@ -41,8 +39,6 @@ window.onload = function () {
     errorS[0].classList.add("none");
   });
 
-  //Lastname
-
   function validateLastname(input1) {
     if (input1.length >= 3) {
       for (var index = 0; index < input1.length; index++)
@@ -63,8 +59,6 @@ window.onload = function () {
     lastnameI.classList.remove("red-border");
     errorS[1].classList.add("none");
   });
-
-  //Dni
 
   function hasNumbers(string) {
     var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -96,10 +90,8 @@ window.onload = function () {
     errorS[2].classList.add("none");
   });
 
-  //date
-
-  function validateDate(bTdate) {
-    var birthDate = new Date(bTdate);
+  function validateDate(date1) {
+    var birthDate = new Date(date1);
     var currentDate = new Date();
     if (birthDate.getTime() <= currentDate.getTime()) {
       return true;
@@ -107,9 +99,15 @@ window.onload = function () {
     return false;
   }
 
+  var storedDate = localStorage.getItem("dob");
+  if (validateDate(storedDate)) {
+    var formattedDate = changeDateFormat(storedDate);
+  } else {
+    return formattedDate;
+  }
+
   function changeDateFormat(date) {
     var dateArray = date.split("-");
-
     year = dateArray[0];
     month = dateArray[1];
     day = dateArray[2];
@@ -117,6 +115,7 @@ window.onload = function () {
     dateArray = month + "/" + day + "/" + year;
     return dateArray;
   }
+
   bTdate.addEventListener("blur", function (event) {
     if (!validateDate(event.target.value)) {
       bTdate.classList.add("red-border");
@@ -127,8 +126,6 @@ window.onload = function () {
     bTdate.classList.remove("red-border");
     errorS[3].classList.add("none");
   });
-
-  //Phone
 
   function validatePhone(phone1) {
     if (phone1.length == 10 && hasNumbers(phone1)) {
@@ -150,8 +147,6 @@ window.onload = function () {
     phoneN.classList.remove("red-border");
     errorS[4].classList.add("none");
   });
-
-  //Address
 
   function validateAddress(myString) {
     var num = 0;
@@ -194,8 +189,6 @@ window.onload = function () {
     return false;
   }
 
-  //City
-
   var cityT = document.getElementById("city");
 
   cityT.addEventListener("blur", function (event) {
@@ -209,28 +202,14 @@ window.onload = function () {
     errorS[6].classList.add("none");
   });
 
-  function hasNumbers(myString) {
-    var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-
-    for (var x = 0; x < myString.length; x++) {
-      if (numbers.includes(myString[x])) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  function validateCity(numberandchar) {
-    var num = 0;
+  function validateCity(letter) {
     var char = 0;
-    if (numberandchar.length >= 3) {
-      for (var x = 0; x < numberandchar.length; x++) {
-        if (hasNumbers(numberandchar[x])) {
-          num++;
-        } else {
+    if (letter.length >= 3) {
+      for (var x = 0; x < letter.length; x++) {
+        if (validateLetter(letter[x])) {
           char++;
         }
-        if (num > 0 && char > 0) {
+        if (char > 0) {
           return true;
         }
       }
@@ -238,8 +217,6 @@ window.onload = function () {
     }
     return false;
   }
-
-  //Postal Code
 
   postalC.addEventListener("blur", function (event) {
     if (!validatePostal(event.target.value)) {
@@ -262,8 +239,6 @@ window.onload = function () {
     }
   }
 
-  //email
-
   var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
   var emailInput = document.getElementById("email");
   function validateEmail(email) {
@@ -283,7 +258,6 @@ window.onload = function () {
     errorS[8].classList.add("none");
   });
 
-  //Password
   var passwordInput = document.getElementById("password");
 
   passwordInput.addEventListener("blur", function (event) {
@@ -316,7 +290,6 @@ window.onload = function () {
     return false;
   }
 
-  //Repeat Password
   function validateRepeatPass(p1, p2) {
     if (p1 == p2) {
       return true;
@@ -337,7 +310,6 @@ window.onload = function () {
     errorS[10].classList.add("none");
   });
 
-  //button
   var button = document.getElementById("continue");
   button.addEventListener("click", function (event) {
     urlSignUp =
@@ -361,9 +333,7 @@ window.onload = function () {
       "&email=" +
       emailInput.value +
       "&password=" +
-      passwordInput.value +
-      "&password=" +
-      passwordR.value;
+      passwordInput.value;
     event.preventDefault();
     if (
       validateEmail(emailInput.value) &&
@@ -377,35 +347,37 @@ window.onload = function () {
       validateCity(cityT.value) &&
       validatePostal(postalC.value) &&
       validateRepeatPass(passwordR.value, passwordInput.value)
-    ) {
+    )
+      /*{
       alert(
-      "email" +
-        emailInput.value +
-        "\npassword" +
-        passwordInput.value +
-        "\nname=" +
-        nameI.value +
-        "\nlastname=" +
-        lastnameI.value +
-        "\ndni=" +
-        dniInput.value +
-        "\ndate=" +
-        bTdate.value +
-        "\nphone=" +
-        phoneN.value +
-        "\naddress" +
-        addressN.value +
-        "\ncity=" +
-        cityT.value +
-        "\npostal" +
-        postalC.value
-    )}
+        "email" +
+          emailInput.value +
+          "\npassword" +
+          passwordInput.value +
+          "\nname=" +
+          nameI.value +
+          "\nlastname=" +
+          lastnameI.value +
+          "\ndni=" +
+          dniInput.value +
+          "\ndate=" +
+          bTdate.value +
+          "\nphone=" +
+          phoneN.value +
+          "\naddress" +
+          addressN.value +
+          "\ncity=" +
+          cityT.value +
+          "\npostal" +
+          postalC.value
+      );
+    }*/
       fetch(urlSignUp)
         .then(function (response) {
           return response.json();
         })
         .then(function (infouser) {
-          if (data.hasOwnProperty("data")) {
+          if (infouser.hasOwnProperty("data")) {
             var keys = Object.keys(infouser.data);
             for (var i = 1; i < keys.length; i++) {
               var key = keys[i];
@@ -423,46 +395,47 @@ window.onload = function () {
               }
             }
           }
-          })
-        .catch(function() {
-          alert("ERROR")})
+        })
+        .catch(function () {
+          alert("ERROR");
+        });
 
-             if (!validateEmail(emailInput.value)) {
-              alert("ERROR =" + emailInput.value);
-            }
-            if (!hasNumbersAndChar(passwordInput.value)) {
-              alert("ERRORPASS1 =" + passwordInput.value);
-            }
-            if (!validateName(nameI.value)) {
-              alert("ERROR=" + nameI.value);
-            }
-            if (!validateLastname(lastnameI.value)) {
-              alert("ERROR=" + lastnameI.value);
-            }
-            if (!validateDni(dniInput.value)) {
-              alert("ERROR=" + dniInput.value);
-            }
-            if (!validateDate(bTdate.value)) {
-              alert("ERROR=" + bTdate.value);
-            }
-            if (!validatePhone(phoneN.value)) {
-              alert("ERROR=" + phoneN.value);
-            }
-            if (!validateAddress(addressN.value)) {
-              alert("ERROR=" + addressN.value);
-            }
-            if (!validateCity(cityT.value)) {
-              alert("ERROR=" + cityT.value);
-            }
-            if (!validatePostal(postalC.value)) {
-              alert("ERROR=" + postalC.value);
-            }
-            if (!validateRepeatPass(passwordR.value, passwordInput.value)) {
-              alert("ERRORPASS2=" + passwordR.value);
-            }
-          })
+    if (!validateEmail(emailInput.value)) {
+      alert("ERROR =" + emailInput.value);
+    }
+    if (!hasNumbersAndChar(passwordInput.value)) {
+      alert("ERRORPASS1 =" + passwordInput.value);
+    }
+    if (!validateName(nameI.value)) {
+      alert("ERROR=" + nameI.value);
+    }
+    if (!validateLastname(lastnameI.value)) {
+      alert("ERROR=" + lastnameI.value);
+    }
+    if (!validateDni(dniInput.value)) {
+      alert("ERROR=" + dniInput.value);
+    }
+    if (!validateDate(bTdate.value)) {
+      alert("ERROR=" + bTdate.value);
+    }
+    if (!validatePhone(phoneN.value)) {
+      alert("ERROR=" + phoneN.value);
+    }
+    if (!validateAddress(addressN.value)) {
+      alert("ERROR=" + addressN.value);
+    }
+    if (!validateCity(cityT.value)) {
+      alert("ERROR=" + cityT.value);
+    }
+    if (!validatePostal(postalC.value)) {
+      alert("ERROR=" + postalC.value);
+    }
+    if (!validateRepeatPass(passwordR.value, passwordInput.value)) {
+      alert("ERRORPASS2=" + passwordR.value);
+    }
+  });
 
-      /*nameI.addEventListener("focusout", function () {
+  /*nameI.addEventListener("focusout", function () {
       localStorage.setItem("name", nameI.value);
     });
     lastnameI.addEventListener("focusout", function () {
@@ -472,7 +445,7 @@ window.onload = function () {
       localStorage.setItem("dni", dniInput.value);
     });*/
 
-      /*localStorage.setItem("email", emailInput.value);
+  /*localStorage.setItem("email", emailInput.value);
       localStorage.setItem("password", passwordInput.value);
       localStorage.setItem("date", bTdate.value);
       localStorage.setItem("phone", phoneN.value);
@@ -485,18 +458,12 @@ window.onload = function () {
     lastnameI.value = localStorage.getItem("lastName");
     addressN.value = localStorage.getItem("address");
     postalC.value = localStorage.getItem("zip");
-    changeDateFormat(bTdate.value) = localStorage.getItem("dob");
+    formattedDate.value = localStorage.getItem("dob");
     phoneN.value = localStorage.getItem("phone");
     dniInput.value = localStorage.getItem("dni");
     cityT.value = localStorage.getItem("city");
     emailInput.value = localStorage.getItem("email");
     passwordInput.value = localStorage.getItem("password");
-    passwordR.value = localStorage.getItem("password")
-  };
-}
-
-
-
-
-
-
+    passwordR.value = localStorage.getItem("password");
+  }
+};
