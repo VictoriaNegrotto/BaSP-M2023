@@ -1,5 +1,9 @@
 # Basp-M2023
 
+### Mega Rocket Gym (web/app)
+
+We created a gym website with Figma, where we used HTML, CSS and JS to give it shape and dynamism.
+
 ## Week-01
 
 I worked with Figma, i created the Landing Page Screenflow and i worked in them wiht my group. I did the iphone, macbook and ipad Screenflow.
@@ -18,35 +22,37 @@ I worked with class and id to be able to use styles. try to follow to the letter
 
 ## Week-04
 
-### ~ I worked on files of Css, i used flexbox and started work on Mobile First
-
-### ~ Files: common, content, header and side-bar, all of them with the style and Media Querie.
-
-### ~ I worked with my team in programing pear, and alone too. They help me.
-
-### ~ I think i've used the correct style of every file of css.
+I worked on files of Css, i used flexbox and started work on Mobile First
+Files: common, content, header and side-bar, all of them with the style and Media Querie.
+I worked with my team in programing pear, and alone too. They help me.
+I think i've used the correct style of every file of css.
 
 ## Week-05
 
-### ~ I worked on Java Script, in different exercises about Variables, Strings, Arrays, If-Else, For and Functions.
+I worked on Java Script, in different exercises about Variables, Strings, Arrays, If-Else, For and Functions.
+I resolved the problem, studied and understand the Asyncronus material.
+We programmed in pair with my team and resolved to doubt about JS.
 
-### ~ I resolved the problem, studied and understand the Asyncronus material.
-
-### We programmed in pair with my team and resolved to doubt about JS.
-
-https://victorianegrotto.github.io/BaSP-M2023/week-05/
+[Week 05]
+(https://victorianegrotto.github.io/BaSP-M2023/week-05/)
 
 ## Week-06
 
-### ~ I worked on Login and Sign up of Landing with HTM, CSS and JAVA SCRIPT.
+I worked on Login and Sign up of Landing with HTM, CSS and JAVA SCRIPT.
+I created 2 new HTML and changed the CSS with what raised the problem.
+I validated all inputs with JAVA SCRIPT.
+I resolved the problem on time, with help of asyncronus material and my team.
 
-### ~ I created 2 new HTML and changed the CSS with what raised the problem.
+[Week 06]
+(https://victorianegrotto.github.io/BaSP-M2023/week-06/views/index.html)
 
-### ~ I validated all inputs with JAVA SCRIPT.
+## Week-07
 
-### ~ I resolved the problem on time, with help of asyncronus material and my team.
+I studied the asynchronous material, I looked for some external references to the bootcamp to be able to understand what was proposed.
+I created all the corresponding folder, files and worked in JS with sign-up and login, fixed html links and using what was stated in the problem: fetch and localStorage with the validations.
 
-https://victorianegrotto.github.io/BaSP-M2023/week-06/views/index.html
+[Week 07]
+(https://victorianegrotto.github.io/BaSP-M2023/week-07/views/index.html)
 
 ## Author
 
