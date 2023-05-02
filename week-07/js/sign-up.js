@@ -347,8 +347,7 @@ window.onload = function () {
       validateCity(cityT.value) &&
       validatePostal(postalC.value) &&
       validateRepeatPass(passwordR.value, passwordInput.value)
-    )
-      /*{
+    ) {
       alert(
         "email" +
           emailInput.value +
@@ -371,34 +370,34 @@ window.onload = function () {
           "\npostal" +
           postalC.value
       );
-    }*/
-      fetch(urlSignUp)
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (infouser) {
-          if (infouser.hasOwnProperty("data")) {
-            var keys = Object.keys(infouser.data);
-            for (var i = 1; i < keys.length; i++) {
-              var key = keys[i];
-              if (infouser.data.hasOwnProperty(key)) {
-                var value = infouser.data[key];
-                localStorage.setItem(key, value);
-                alert(key + ": " + value);
-              }
-            }
-          } else if (infouser.hasOwnProperty("errors")) {
-            for (var i = 0; i < infouser.errors.length; i++) {
-              var error = infouser.errors[i];
-              if (error.hasOwnProperty("msg")) {
-                alert(error.msg);
-              }
+    }
+    fetch(urlSignUp)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (infouser) {
+        if (infouser.hasOwnProperty("data")) {
+          var keys = Object.keys(infouser.data);
+          for (var i = 1; i < keys.length; i++) {
+            var key = keys[i];
+            if (infouser.data.hasOwnProperty(key)) {
+              var value = infouser.data[key];
+              localStorage.setItem(key, value);
+              alert(key + ": " + value);
             }
           }
-        })
-        .catch(function () {
-          alert("ERROR");
-        });
+        } else if (infouser.hasOwnProperty("errors")) {
+          for (var i = 0; i < infouser.errors.length; i++) {
+            var error = infouser.errors[i];
+            if (error.hasOwnProperty("msg")) {
+              alert(error.msg);
+            }
+          }
+        }
+      })
+      .catch(function () {
+        alert("ERROR");
+      });
 
     if (!validateEmail(emailInput.value)) {
       alert("ERROR =" + emailInput.value);
@@ -435,23 +434,6 @@ window.onload = function () {
     }
   });
 
-  /*nameI.addEventListener("focusout", function () {
-      localStorage.setItem("name", nameI.value);
-    });
-    lastnameI.addEventListener("focusout", function () {
-      localStorage.setItem("lastname", lastnameI.value);
-    });
-    dniInput.addEventListener("focusout", function () {
-      localStorage.setItem("dni", dniInput.value);
-    });*/
-
-  /*localStorage.setItem("email", emailInput.value);
-      localStorage.setItem("password", passwordInput.value);
-      localStorage.setItem("date", bTdate.value);
-      localStorage.setItem("phone", phoneN.value);
-      localStorage.setItem("address", addressN.value);
-      localStorage.setItem("city", cityT.value);
-      localStorage.setItem("postal", postalC.value);*/
   document.addEventListener("DOMContentLoaded", ReloadInfo());
   function ReloadInfo() {
     nameI.value = localStorage.getItem("name");
